@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define N 4
 
@@ -39,21 +40,40 @@ int init(char entree[], char sortie[N][N][3], FILE * dico, FILE * output)
 int create_new_dico(char ruzzle[N][N][3], FILE * dico)
 {
     FILE * newdico;
+    int k=0;
+    bool sortie;
     char word[30];
-    char letters[N+1];
+    char inLetters[N*N+1];
+    char outLetters[26];
+    char totLetters[26]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     newdico = fopen("newdico.txt","w");
     for(int i=0;i<N;i++)
     {
         for(int j=0;j<N;j++)
         {
-            letters[N*i+j] = ruzzle[i][j][0];
+            inLetters[N*i+j] = ruzzle[i][j][0];
         }
-        letters[N*N]='\0';
+        inLetters[N*N]='\0';
+    }
+    for(int i=0;i<26;i++)
+    {
+        for(int j=0;j<N*N;j++)
+        {
+            if(totLetters[i]==inLetters[j])
+            {
+                sortie=1;
+            }
+        }
+        if(sortie!=1)
+        {
+            outLetters[k]=totLetters[i];
+            k++;
+        }
     }
     while(!feof(dico))
     {
         fscanf(dico,"%s",&word);
-        if(strpbrk(word,letters)!=NULL)
+        if(strpbrk(word,outLetters)==NULL)
         {
             fprintf(newdico,"%s\n",word);
         }
