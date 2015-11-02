@@ -104,7 +104,7 @@ int create_new_dico(cell ruzzle[N][N], FILE * dico)
 
 int find_word(int i, int j, cell ruzzle[N][N], FILE * dico)
 {
-	while(!f(dico)
+	while(!feof(dico)
 	{
 		
 	}
