@@ -5,7 +5,24 @@
 
 #define N 4
 
-int init(char entree[], char sortie[N][N][3], FILE * dico, FILE * output)
+typedef enum
+{
+	none    = 0,
+    doubleL = 1,
+    tripleL = 2,
+    doubleM = 3,
+    tripleM = 4
+}bonusEnum;
+
+typedef struct 
+{
+	unsigned char character;
+	unsigned int point;
+	bonusEnum bonus;
+	unsigned int visited;
+} cell;
+
+int init(char entree[], cell sortie[N][N], FILE * dico, FILE * output)
 {
     int erreur = 0;
     if(strlen(entree)==(N*N*N))
@@ -14,9 +31,10 @@ int init(char entree[], char sortie[N][N][3], FILE * dico, FILE * output)
         {
             for(int j=0;j<N;j++)
             {
-                sortie[i][j][0] = entree[N*N*i+N*j];
-                sortie[i][j][1] = entree[N*N*i+N*j+1];
-                sortie[i][j][2] = entree[N*N*i+N*j+2]+entree[N*N*i+N*j+3];
+                sortie[i][j].character = entree[N*N*i+N*j];
+                sortie[i][j].point = atoi(entree[N*N*i+N*j+1]);
+                sortie[i][j].bonus = atoi(entree[N*N*i+N*j+2]+entree[N*N*i+N*j+3]);
+                sortie[i][j].visited = 0;
             }
         }
     }
@@ -37,7 +55,7 @@ int init(char entree[], char sortie[N][N][3], FILE * dico, FILE * output)
     return erreur;
 }
 
-int create_new_dico(char ruzzle[N][N][3], FILE * dico)
+int create_new_dico(cell ruzzle[N][N], FILE * dico)
 {
     FILE * newdico;
     int k=0;
@@ -45,13 +63,13 @@ int create_new_dico(char ruzzle[N][N][3], FILE * dico)
     char word[30];
     char inLetters[N*N+1];
     char outLetters[26];
-    char totLetters[26]="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char totLetters[26]="abcdefghijklmnopqrstuvwxyz";
     newdico = fopen("newdico.txt","w");
     for(int i=0;i<N;i++)
     {
         for(int j=0;j<N;j++)
         {
-            inLetters[N*i+j] = ruzzle[i][j][0];
+            inLetters[N*i+j] = ruzzle[i][j].character;
         }
         inLetters[N*N]='\0';
     }
@@ -70,6 +88,7 @@ int create_new_dico(char ruzzle[N][N][3], FILE * dico)
             k++;
         }
     }
+    outLetters[k]='\0';
     while(!feof(dico))
     {
         fscanf(dico,"%s",&word);
@@ -82,18 +101,25 @@ int create_new_dico(char ruzzle[N][N][3], FILE * dico)
     dico = newdico;
     return 0;
 }
-int find_word(int i, int j, char ruzzle[N][N][3], FILE * dico)
+int find_word(int i, int j, cell ruzzle[N][N], FILE * dico)
 {
-
+	for(int i=0;i<N;i++)
+	{
+		for(int j=0;j<N;j++)
+		{
+			
+		}
+	}
     return 0;
 }
 
 int main(int argc, char * argv[])
 {
-    char ruzzle[N][N][3];
+    cell ruzzle[N][N];
     FILE * dico=NULL;
     FILE * output=NULL;
     init(*argv, ruzzle, dico, output);
+    create_new_dico()
     for(int i=0;i<N;i++)
     {
         for(int j=0;j<N;j++)
