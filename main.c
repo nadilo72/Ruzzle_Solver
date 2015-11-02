@@ -92,7 +92,7 @@ int create_new_dico(cell ruzzle[N][N], FILE * dico)
     while(!feof(dico))
     {
         fscanf(dico,"%s",&word);
-        if(strpbrk(word,outLetters)==NULL)
+        if(strpbrk(word,outLetters)==NULL && strlen(word)<=16)
         {
             fprintf(newdico,"%s\n",word);
         }
@@ -101,14 +101,12 @@ int create_new_dico(cell ruzzle[N][N], FILE * dico)
     dico = newdico;
     return 0;
 }
+
 int find_word(int i, int j, cell ruzzle[N][N], FILE * dico)
 {
-	for(int i=0;i<N;i++)
+	while(!f(dico)
 	{
-		for(int j=0;j<N;j++)
-		{
-			
-		}
+		
 	}
     return 0;
 }
