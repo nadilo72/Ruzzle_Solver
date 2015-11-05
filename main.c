@@ -22,6 +22,12 @@ typedef struct
 	unsigned int visited;
 } cell;
 
+typedef struct
+{
+	int x;
+	int y;
+}coord;
+
 int init(char entree[], cell sortie[N][N], FILE * dico, FILE * output)
 {
     int erreur = 0;
@@ -33,24 +39,24 @@ int init(char entree[], cell sortie[N][N], FILE * dico, FILE * output)
             {
                 sortie[i][j].character = entree[N*N*i+N*j];
                 sortie[i][j].point = atoi(entree[N*N*i+N*j+1]);
-                sortie[i][j].bonus = atoi(entree[N*N*i+N*j+2]+entree[N*N*i+N*j+3]);
+                sortie[i][j].bonus = atoi(entree[N*N*i+N*j+2]+entree[N*N*i+N*j+3]); //faire changement en fonction des valeurs entrées.
                 sortie[i][j].visited = 0;
             }
         }
     }
     else
     {
-        erreur = 1;
+        erreur += 1;
     }
     dico = fopen("dictionnaire.txt","r");
     if(dico==NULL)
     {
-        erreur = 2;
+        erreur += 2;
     }
     output = fopen("output.txt","w");
     if(output==NULL)
     {
-        erreur = 3;
+        erreur += 4;
     }
     return erreur;
 }
@@ -102,13 +108,73 @@ int create_new_dico(cell ruzzle[N][N], FILE * dico)
     return 0;
 }
 
-int find_word(int i, int j, cell ruzzle[N][N], FILE * dico)
+void find_letter(char c, coord * coordonnee, cell ruzzle[N][N])
 {
-	while(!feof(dico)
+	bool trouve = false;
+	for(int i=-1;i<=1 && !trouve;i++)
 	{
-		
+		for(int j=-1; j<=1 && !trouve;j++)
+		{
+			if(coordonnee -> x + i >=0 && coordonnee -> x + i <N && coordonnee -> y + j >=0 && coordonnee -> y + j <N )
+			{
+				if(c == ruzzle[coordonnee -> x + i][coordonnee -> y + j] && ruzzle[coordonnee -> x + i][coordonnee -> y + j].visited == 0)
+				{
+					trouve = true;
+					coordonnee -> x += i;
+					coordonnee -> y += j;
+					ruzzle.visited=1;
+				}
+			}
+		}
 	}
-    return 0;
+}
+
+//ajouter_score(cell ruzzle[N][N], coord coordonnee, t_score * score) - incrémente le score de la valeur de la case envoyé en paramètre
+//ajouter_mot(char mot[]) - ajoute le mot dans le fichier, suivit du score associé. !!passer le fichier output en param ou en global
+//reInitVisited(cell ruzzle[N][N]) - réinitialise la valeur de visited de toutes les cases du ruzzle
+
+void find_word(cell ruzzle[N][N], char mot[])
+{
+	typedef struct
+	{
+		int point;
+		int multi;
+	}t_score;
+	t_score score;
+	bool possible = true;
+	bool trouve = false;
+	coord coordonnee;
+	
+	for(int i = 0; i<N && !trouve; i++)
+	{
+		for(int j=0; j<N && !trouve; j++)
+		{
+			if(mot[0]==ruzzle[i][j])
+			{
+				coordonnee.x=i;
+				coordonnee.y=j;
+				trouve=true;
+				ruzzle[coordonnee.x][coordonnee.y].visited=1;
+			}
+		}
+	}
+	for(int i=1; i<strlen(mot) && possible; i++)
+	{
+		find_letter(mot[i],&coordonnee;ruzzle)
+		if(coordonnee.x==-1)
+		{
+			possible = false
+		}
+		else
+		{
+			ajouter_score(ruzzle, coordonnee, &score);
+		}
+	}
+	if(possible)
+	{
+		ajouter_mot(mot, score);
+	}
+	reInitVisited(ruzzle);
 }
 
 int main(int argc, char * argv[])
@@ -116,14 +182,14 @@ int main(int argc, char * argv[])
     cell ruzzle[N][N];
     FILE * dico=NULL;
     FILE * output=NULL;
+	char mot[20];
+	
     init(*argv, ruzzle, dico, output);
     create_new_dico()
-    for(int i=0;i<N;i++)
-    {
-        for(int j=0;j<N;j++)
-        {
-            find_word(i,j,ruzzle,dico);
-        }
-    }
+	while(!feof(dico)
+	{
+		fscanf(dico,"%s",mot);
+		find_word(ruzzle,mot);
+	}
     return 0;
 }
