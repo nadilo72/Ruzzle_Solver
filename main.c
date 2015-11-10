@@ -11,7 +11,7 @@ typedef enum
     doubleL = 2,
     tripleL = 3,
     doubleM = 4,
-    tripleM = 6
+    tripleM = 5
 }bonusEnum;
 
 typedef struct 
@@ -154,7 +154,7 @@ void find_letter(char c, coord * coordonnee, cell ruzzle[N][N])
 
 //ajouter_score(cell ruzzle[N][N], coord coordonnee, t_score * score) - incrémente le score de la valeur de la case envoyé en paramètre
 //ajouter_mot(char mot[]) - ajoute le mot dans la liste, suivit du score associé. La liste est trié en ordre décroissant!!
-//reInitVisited(cell ruzzle[N][N]) - réinitialise la valeur de visited de toutes les cases du ruzzle
+//init_visited(cell ruzzle[N][N]) - réinitialise la valeur de visited de toutes les cases du ruzzle
 
 void find_word(cell ruzzle[N][N], char mot[])
 {
@@ -192,7 +192,7 @@ void find_word(cell ruzzle[N][N], char mot[])
 	{
 		ajouter_mot(mot, score);
 	}
-	reInitVisited(ruzzle);
+	init_visited(ruzzle);
 }
 
 int main(int argc, char * argv[])
