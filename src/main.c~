@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "../include/ruz_lib.h"
 
 #define N 4
 
