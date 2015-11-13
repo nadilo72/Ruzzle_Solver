@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <ctype.h>
+#include "liste.h"
 
 #define N 4
 
@@ -11,7 +13,7 @@ typedef enum
     doubleL = 2,
     tripleL = 3,
     doubleM = 4,
-    tripleM = 5
+    tripleM = 6
 }bonusEnum;
 
 typedef struct
@@ -79,16 +81,25 @@ int init(char entree[], cell sortie[N][N], FILE * dico, FILE * output)
     {
         erreur += 2;
     }
+    else
+    {
+        fclose(dico);
+    }
     output = fopen("output.txt","w");
     if(output==NULL)
     {
         erreur += 4;
+    }
+    else
+    {
+        fclose(output);
     }
     return erreur;
 }
 
 int create_new_dico(cell ruzzle[N][N], FILE * dico)
 {
+    dico = fopen("dictionnaire.txt","r");
     FILE * newdico;
     int k=0;
     bool sortie;
@@ -110,14 +121,14 @@ int create_new_dico(cell ruzzle[N][N], FILE * dico)
         sortie=0;
         for(int j=0;j<N*N;j++)
         {
-            if(totLetters[i]==inLetters[j])
+            if(tolower(totLetters[i])==tolower(inLetters[j]))
             {
                 sortie=1;
             }
         }
         if(sortie!=1)
         {
-            outLetters[k]=totLetters[i];
+            outLetters[k]=tolower(totLetters[i]);
             k++;
         }
     }
@@ -131,7 +142,7 @@ int create_new_dico(cell ruzzle[N][N], FILE * dico)
         }
     }
     fclose(dico);
-    dico = newdico;
+    fclose(newdico);
     return 0;
 }
 
@@ -142,24 +153,53 @@ void find_letter(char c, coord * coordonnee, cell ruzzle[N][N])
 	{
 		for(int j=-1; j<=1 && !trouve;j++)
 		{
-			if(coordonnee -> x + i >=0 && coordonnee -> x + i <N && coordonnee -> y + j >=0 && coordonnee -> y + j <N )
-			{
-				if(c == ruzzle[coordonnee -> x + i][coordonnee -> y + j].character && ruzzle[coordonnee -> x + i][coordonnee -> y + j].visited == 0)
-				{
-					trouve = true;
-					coordonnee -> x += i;
-					coordonnee -> y += j;
-					ruzzle[coordonnee->x][coordonnee->y].visited=1;
+		    if(i!=0||j!=0)
+            {
+                if(coordonnee -> x + i >=0 && coordonnee -> x + i <N && coordonnee -> y + j >=0 && coordonnee -> y + j <N )
+                {
+                    if(c == ruzzle[coordonnee -> x + i][coordonnee -> y + j].character && ruzzle[coordonnee -> x + i][coordonnee -> y + j].visited == 0)
+                    {
+                        trouve = true;
+                        coordonnee -> x += i;
+                        coordonnee -> y += j;
+                        ruzzle[coordonnee->x][coordonnee->y].visited=1;
 
-				}
-			}
+                    }
+                }
+            }
 		}
 	}
 }
 
 void ajouter_mot(char * mot, int score)
 {
-	printf("%i - %s",score,mot);
+	printf("%i - %s\n",score,mot);
+	int elem;
+	char tmp[20];
+	bool place=false;
+	if(!liste_vide())
+	{
+		en_tete();
+		while(!hors_liste() && !place)
+		{
+			valeur_elt(tmp,&elem);
+			if(score < elem)
+			{
+				ajout_droit(mot,score);
+				place=true;
+			}
+			suivant();
+		}
+		if(!place)
+		{
+			en_queue();
+			ajout_gauche(mot,score);
+		}
+	}
+	else
+	{
+		ajout_gauche(mot,score);
+	}
 }
 
 void ajouter_score (cell ruzzle[N][N], coord pos, t_score * score)
@@ -170,7 +210,8 @@ void ajouter_score (cell ruzzle[N][N], coord pos, t_score * score)
 	}
 	else
 	{
-		score->multi *= ruzzle[pos.x][pos.y].bonus-2;
+	    score->point += ruzzle[pos.x][pos.y].point;
+		score->multi *= ruzzle[pos.x][pos.y].bonus/2;
 	}
 }
 
@@ -189,6 +230,8 @@ void init_visited (cell ruzzle[N][N])
 void find_word(cell ruzzle[N][N], char mot[])
 {
 	t_score score;
+	score.point=0;
+	score.multi=1;
 	bool possible = true;
 	bool trouve = false;
 	coord coordonnee;
@@ -215,14 +258,38 @@ void find_word(cell ruzzle[N][N], char mot[])
 		}
 		else
 		{
-			ajouter_score(ruzzle, coordonnee, &score);
+            if(strlen(mot)>1)
+            {
+                ajouter_score(ruzzle, coordonnee, &score);
+            }
 		}
 	}
 	if(possible)
 	{
-		ajouter_mot(mot, score.point*score.multi);
+		if(strlen(mot)>1)
+		{
+		    ajouter_mot(mot, score.point*score.multi);
+		}
 	}
 	init_visited(ruzzle);
+}
+
+void print_list()
+{
+    char * mot;
+    int score;
+    FILE * out=fopen("output.txt","w");
+    if(!liste_vide())
+    {
+        en_tete();
+        while(!hors_liste())
+        {
+            valeur_elt(mot,&score);
+            fprintf(out,"%i - %s\n",score,mot);
+            suivant();
+        }
+    }
+    fclose(out);
 }
 
 int main(int argc, char * argv[])
@@ -232,23 +299,27 @@ int main(int argc, char * argv[])
 	printf("%i",argc);
 	if(argc==1)
 	{
-		strcpy(input,"O1  S1DLL1  C4  E1  L1  A1  I1  T1  A1  N1  T1  M3  Y4  S1  E1  ");
+		strcpy(input,"O1  S1DLL1  C4  E1  L1  A1  I1  T1  A1  N1  T1  M3  Y4  S1  E1  ");//O 2S D 2L C 2E 2A I N M Y
 	}
 
 	//fin_test
     cell ruzzle[N][N];
     FILE * dico=NULL;
     FILE * output=NULL;
+    init_liste();
     char mot[20];
 
     if(!init(input, ruzzle, dico, output))
     {
         create_new_dico(ruzzle,dico);
+        dico = fopen("newdico.txt","r");
         while(!feof(dico))
         {
             fscanf(dico,"%s",mot);
             find_word(ruzzle,mot);
         }
+        fclose(dico);
+        print_list();
     }
     else
     {
@@ -256,4 +327,3 @@ int main(int argc, char * argv[])
     }
     return 0;
 }
-
