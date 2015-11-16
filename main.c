@@ -46,7 +46,7 @@ int init(char entree[], cell sortie[N][N], FILE * dico, FILE * output)
         {
             for(int j=0;j<N;j++)
             {
-                sortie[i][j].character = entree[N*N*i+N*j];
+                sortie[i][j].character = tolower(entree[N*N*i+N*j]);
                 sortie[i][j].point = entree[N*N*i+N*j+1] - '0';
                 if(entree[N*N*i+N*j+2]=='L' || entree[N*N*i+N*j+2]==' ')
                 {
@@ -121,7 +121,7 @@ int create_new_dico(cell ruzzle[N][N], FILE * dico)
         sortie=0;
         for(int j=0;j<N*N;j++)
         {
-            if(tolower(totLetters[i])==tolower(inLetters[j]))
+            if(tolower(totLetters[i])==inLetters[j])
             {
                 sortie=1;
             }
@@ -146,7 +146,7 @@ int create_new_dico(cell ruzzle[N][N], FILE * dico)
     return 0;
 }
 
-void find_letter(char c, coord * coordonnee, cell ruzzle[N][N])
+bool find_letter(char c, coord * coordonnee, cell ruzzle[N][N])
 {
 	bool trouve = false;
 	for(int i=-1;i<=1 && !trouve;i++)
@@ -163,12 +163,12 @@ void find_letter(char c, coord * coordonnee, cell ruzzle[N][N])
                         coordonnee -> x += i;
                         coordonnee -> y += j;
                         ruzzle[coordonnee->x][coordonnee->y].visited=1;
-
                     }
                 }
             }
 		}
 	}
+	return trouve;
 }
 
 void ajouter_mot(char * mot, int score)
@@ -185,7 +185,7 @@ void ajouter_mot(char * mot, int score)
 			valeur_elt(tmp,&elem);
 			if(score < elem)
 			{
-				ajout_droit(mot,score);
+				ajout_gauche(mot,score);
 				place=true;
 			}
 			suivant();
@@ -193,12 +193,12 @@ void ajouter_mot(char * mot, int score)
 		if(!place)
 		{
 			en_queue();
-			ajout_gauche(mot,score);
+			ajout_droit(mot,score);
 		}
 	}
 	else
 	{
-		ajout_gauche(mot,score);
+		ajout_droit(mot,score);
 	}
 }
 
@@ -246,22 +246,16 @@ void find_word(cell ruzzle[N][N], char mot[])
 				coordonnee.y=j;
 				trouve=true;
 				ruzzle[coordonnee.x][coordonnee.y].visited=1;
+				ajouter_score(ruzzle, coordonnee, &score);
 			}
 		}
 	}
 	for(int i=1; i<strlen(mot) && possible; i++)
 	{
-		find_letter(mot[i],&coordonnee,ruzzle);
-		if(coordonnee.x==-1)
+		possible=find_letter(mot[i],&coordonnee,ruzzle);
+		if(possible)
 		{
-			possible = false;
-		}
-		else
-		{
-            if(strlen(mot)>1)
-            {
-                ajouter_score(ruzzle, coordonnee, &score);
-            }
+            ajouter_score(ruzzle, coordonnee, &score);
 		}
 	}
 	if(possible)
@@ -276,17 +270,18 @@ void find_word(cell ruzzle[N][N], char mot[])
 
 void print_list()
 {
-    char * mot;
+    char mot[30];
     int score;
     FILE * out=fopen("output.txt","w");
     if(!liste_vide())
     {
-        en_tete();
+        en_queue();
         while(!hors_liste())
         {
             valeur_elt(mot,&score);
+            //printf("%i - %s\n",score,mot);
             fprintf(out,"%i - %s\n",score,mot);
-            suivant();
+            precedent();
         }
     }
     fclose(out);
@@ -299,10 +294,10 @@ int main(int argc, char * argv[])
 	printf("%i",argc);
 	if(argc==1)
 	{
-		strcpy(input,"O1  S1DLL1  C4  E1  L1  A1  I1  T1  A1  N1  T1  M3  Y4  S1  E1  ");//O 2S D 2L C 2E 2A I N M Y
-	}
-
-	//fin_test
+		strcpy(input,"O1  S1DLL1  C4  E1  L1  A1  I1  T1  A1  N1  T1  M3  Y4  S1  E1  ");//  O  S  L  C
+	}                                                                                    //  E  L  A  I
+                                                                                         //  T  A  N  T
+	//fin_test                                                                           //  M  Y  S  E
     cell ruzzle[N][N];
     FILE * dico=NULL;
     FILE * output=NULL;
@@ -327,3 +322,4 @@ int main(int argc, char * argv[])
     }
     return 0;
 }
+
