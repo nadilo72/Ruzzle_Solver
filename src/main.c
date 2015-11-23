@@ -1,10 +1,22 @@
-﻿#include <stdio.h>
+﻿
+/********************************************//**
+ * \file main.c
+ * \brief Programme principal
+ * \author Ewen C. Bastien B.
+ * \version 1.0
+ * \date 22/11/2015
+ *
+ * Programme initialisant les structure et fichiers et appelant les fonctions filles.
+ *
+ ***********************************************/
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include <ctype.h>
-#include "liste.h"
-#include "ruzzle.h"
+#include "../include/liste.h"
+#include "../include/ruzzle.h"
 
 #define N 4
 

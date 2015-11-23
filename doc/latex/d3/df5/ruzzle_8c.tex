@@ -1,0 +1,285 @@
+\hypertarget{ruzzle_8c}{}\section{Référence du fichier ruzzle.\+c}
+\label{ruzzle_8c}\index{ruzzle.\+c@{ruzzle.\+c}}
+
+
+Fonctions du ruzzle solver.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}ruzzle.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}liste.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de ruzzle.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{df/d55/ruzzle_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ruzzle_8c_a17b31853d3aa79a67d0c25a3ae68a89a}{init} (char entree\mbox{[}$\,$\mbox{]}, \hyperlink{structcell}{cell} sortie\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}, F\+I\+L\+E $\ast$dico, F\+I\+L\+E $\ast$output)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}initialisation globale. \end{DoxyCompactList}\item 
+int \hyperlink{ruzzle_8c_a718478def452ab5bca4b1a3bc8393c57}{create\+\_\+new\+\_\+dico} (\hyperlink{structcell}{cell} ruzzle\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}, F\+I\+L\+E $\ast$dico)
+\begin{DoxyCompactList}\small\item\em Crée un dictionaire élagué \end{DoxyCompactList}\item 
+bool \hyperlink{ruzzle_8c_ad285e4b1ee303ca9809b0aeb31d62685}{find\+\_\+letter} (char c, \hyperlink{structcoord}{coord} $\ast$pos, \hyperlink{structcell}{cell} ruzzle\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Trouve la lettre autour de la position passée en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{ruzzle_8c_ab7e43a2c2790bc312915ec6654ec59ec}{add\+\_\+word} (char $\ast$mot, int score)
+\begin{DoxyCompactList}\small\item\em Ajoute un mot et son score dans une liste triée. \end{DoxyCompactList}\item 
+void \hyperlink{ruzzle_8c_a02b6897a90a34e388aa934e00d35f66d}{add\+\_\+score} (\hyperlink{structcell}{cell} ruzzle\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}, \hyperlink{structcoord}{coord} pos, \hyperlink{structt__score}{t\+\_\+score} $\ast$score)
+\begin{DoxyCompactList}\small\item\em Ajoute le score de la lettre courante. \end{DoxyCompactList}\item 
+void \hyperlink{ruzzle_8c_ac56429d3c5f2133304acb4b6e461cc1b}{init\+\_\+visited} (\hyperlink{structcell}{cell} ruzzle\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Réinitialise le statut visité de chaque case. \end{DoxyCompactList}\item 
+void \hyperlink{ruzzle_8c_a3c8d832e7a79666902bf858650d6ef33}{find\+\_\+word} (\hyperlink{structcell}{cell} ruzzle\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}, char mot\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Cherche un mot dans la grille. \end{DoxyCompactList}\item 
+void \hyperlink{ruzzle_8c_ad9429c78019005dc6e8e62a30166c64b}{print\+\_\+list} ()
+\begin{DoxyCompactList}\small\item\em Enregiste la liste des mots possible dans un fichier externe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fonctions du ruzzle solver. 
+
+\begin{DoxyAuthor}{Auteur}
+Ewen C. Bastien B. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+22/11/2015
+\end{DoxyDate}
+Les différentes fonction nécessaire à la résolution d\textquotesingle{}une grille de ruzzle 
+
+\subsection{Documentation des fonctions}
+\hypertarget{ruzzle_8c_a02b6897a90a34e388aa934e00d35f66d}{}\index{ruzzle.\+c@{ruzzle.\+c}!add\+\_\+score@{add\+\_\+score}}
+\index{add\+\_\+score@{add\+\_\+score}!ruzzle.\+c@{ruzzle.\+c}}
+\subsubsection[{add\+\_\+score(cell ruzzle[N][N], coord pos, t\+\_\+score $\ast$score)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{{\bf coord}}]{pos, }
+\item[{{\bf t\+\_\+score} $\ast$}]{score}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8c_a02b6897a90a34e388aa934e00d35f66d}
+
+
+Ajoute le score de la lettre courante. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} grille du ruzzle \\
+\hline
+{\em coord} & pos position actuel \\
+\hline
+{\em \hyperlink{structt__score}{t\+\_\+score}} & $\ast$ score pointeur sur le score du mot que l\textquotesingle{}on cherche\\
+\hline
+\end{DoxyParams}
+ajouter\+\_\+score ajoute le score de la lettre qui se trouve dans la grille a la position de type coord en parametre et l\textquotesingle{}ajoute au score (comptabilise également les multiplicateurs de mots). 
+
+Définition à la ligne 238 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8c_ab7e43a2c2790bc312915ec6654ec59ec}{}\index{ruzzle.\+c@{ruzzle.\+c}!add\+\_\+word@{add\+\_\+word}}
+\index{add\+\_\+word@{add\+\_\+word}!ruzzle.\+c@{ruzzle.\+c}}
+\subsubsection[{add\+\_\+word(char $\ast$mot, int score)}]{\setlength{\rightskip}{0pt plus 5cm}void add\+\_\+word (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{mot, }
+\item[{int}]{score}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8c_ab7e43a2c2790bc312915ec6654ec59ec}
+
+
+Ajoute un mot et son score dans une liste triée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em char} & $\ast$ mot \+: mot à enregistré \\
+\hline
+{\em int} & score \+: score du mot\\
+\hline
+\end{DoxyParams}
+Ajoute le mot et son score dans une liste doublement chainée. l\textquotesingle{}insertion est effectué de sorte à garder un ordre décroisant. 
+
+Définition à la ligne 195 du fichier ruzzle.\+c.
+
+
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{d3/df5/ruzzle_8c_ab7e43a2c2790bc312915ec6654ec59ec_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ruzzle_8c_a718478def452ab5bca4b1a3bc8393c57}{}\index{ruzzle.\+c@{ruzzle.\+c}!create\+\_\+new\+\_\+dico@{create\+\_\+new\+\_\+dico}}
+\index{create\+\_\+new\+\_\+dico@{create\+\_\+new\+\_\+dico}!ruzzle.\+c@{ruzzle.\+c}}
+\subsubsection[{create\+\_\+new\+\_\+dico(cell ruzzle[N][N], F\+I\+L\+E $\ast$dico)}]{\setlength{\rightskip}{0pt plus 5cm}int create\+\_\+new\+\_\+dico (
+\begin{DoxyParamCaption}
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{F\+I\+L\+E $\ast$}]{dico}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8c_a718478def452ab5bca4b1a3bc8393c57}
+
+
+Crée un dictionaire élagué 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} \+: matrice du ruzzle \\
+\hline
+{\em F\+I\+L\+E} & $\ast$ dico \+: dictionnaire complet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+renvoie toujours 0 (pourait être amélioré en renvoiyant un code d\textquotesingle{}erreur)
+\end{DoxyReturn}
+Crée un nouveau dictionnaire appelé nexdico.\+txt qui ne contiend que les mot dont les lettres sont présentes dans la grille. Cette fonction permet de réduire la taille du fichier parcouru de 3.\+6\+Mo à environ 800\+Ko. 
+
+Définition à la ligne 101 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8c_ad285e4b1ee303ca9809b0aeb31d62685}{}\index{ruzzle.\+c@{ruzzle.\+c}!find\+\_\+letter@{find\+\_\+letter}}
+\index{find\+\_\+letter@{find\+\_\+letter}!ruzzle.\+c@{ruzzle.\+c}}
+\subsubsection[{find\+\_\+letter(char c, coord $\ast$pos, cell ruzzle[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}bool find\+\_\+letter (
+\begin{DoxyParamCaption}
+\item[{char}]{c, }
+\item[{{\bf coord} $\ast$}]{pos, }
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8c_ad285e4b1ee303ca9809b0aeb31d62685}
+
+
+Trouve la lettre autour de la position passée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em char} & c charactère recherché \\
+\hline
+{\em coord} & $\ast$ pos position autour de laquel chercher \\
+\hline
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} \+: grille du ruzzle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+retourne true si la lettre à été trouvé, false sinon. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 159 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8c_a3c8d832e7a79666902bf858650d6ef33}{}\index{ruzzle.\+c@{ruzzle.\+c}!find\+\_\+word@{find\+\_\+word}}
+\index{find\+\_\+word@{find\+\_\+word}!ruzzle.\+c@{ruzzle.\+c}}
+\subsubsection[{find\+\_\+word(cell ruzzle[N][N], char mot[])}]{\setlength{\rightskip}{0pt plus 5cm}void find\+\_\+word (
+\begin{DoxyParamCaption}
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{char}]{mot\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8c_a3c8d832e7a79666902bf858650d6ef33}
+
+
+Cherche un mot dans la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} grille du ruzzle \\
+\hline
+{\em char} & mot\mbox{[}\mbox{]} un mot du dictionnaire à chercher dans la grille\\
+\hline
+\end{DoxyParams}
+find\+\_\+word prend en paramètre la grille du ruzzle et un mot, cherche le mot a l\textquotesingle{}aide d\textquotesingle{}autre fonction et l\textquotesingle{}inscrit dans la liste des solution avec son score. 
+
+Définition à la ligne 285 du fichier ruzzle.\+c.
+
+
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/df5/ruzzle_8c_a3c8d832e7a79666902bf858650d6ef33_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ruzzle_8c_a17b31853d3aa79a67d0c25a3ae68a89a}{}\index{ruzzle.\+c@{ruzzle.\+c}!init@{init}}
+\index{init@{init}!ruzzle.\+c@{ruzzle.\+c}}
+\subsubsection[{init(char entree[], cell sortie[N][N], F\+I\+L\+E $\ast$dico, F\+I\+L\+E $\ast$output)}]{\setlength{\rightskip}{0pt plus 5cm}int init (
+\begin{DoxyParamCaption}
+\item[{char}]{entree\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf cell}}]{sortie\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{F\+I\+L\+E $\ast$}]{dico, }
+\item[{F\+I\+L\+E $\ast$}]{output}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8c_a17b31853d3aa79a67d0c25a3ae68a89a}
+
+
+Fonction d\textquotesingle{}initialisation globale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em char} & entree\mbox{[}\mbox{]} les lettres de la grille du ruzzle. \\
+\hline
+{\em cell} & sortie\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} la transformé en tableau de entree\mbox{[}\mbox{]}. \\
+\hline
+{\em F\+I\+L\+E} & $\ast$ dico le dictionnaire complet \\
+\hline
+{\em F\+I\+L\+E} & $\ast$ output le fichier où seront placé les mot possible.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Renvoit un code d\textquotesingle{}erreur si besoin, 0 sinon.
+\end{DoxyReturn}
+Initialise la grille avec les lettre passées en paramètre et verifie que les fichiers soient accessibles. 
+
+Définition à la ligne 29 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8c_ac56429d3c5f2133304acb4b6e461cc1b}{}\index{ruzzle.\+c@{ruzzle.\+c}!init\+\_\+visited@{init\+\_\+visited}}
+\index{init\+\_\+visited@{init\+\_\+visited}!ruzzle.\+c@{ruzzle.\+c}}
+\subsubsection[{init\+\_\+visited(cell ruzzle[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+visited (
+\begin{DoxyParamCaption}
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8c_ac56429d3c5f2133304acb4b6e461cc1b}
+
+
+Réinitialise le statut visité de chaque case. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} grille du ruzzle\\
+\hline
+\end{DoxyParams}
+init\+\_\+visit prend la grille du ruzzle en paramètre et réinitialise le booléen qui indique le passage ou non sur une case en le passant à false. 
+
+Définition à la ligne 261 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8c_ad9429c78019005dc6e8e62a30166c64b}{}\index{ruzzle.\+c@{ruzzle.\+c}!print\+\_\+list@{print\+\_\+list}}
+\index{print\+\_\+list@{print\+\_\+list}!ruzzle.\+c@{ruzzle.\+c}}
+\subsubsection[{print\+\_\+list()}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+list (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8c_ad9429c78019005dc6e8e62a30166c64b}
+
+
+Enregiste la liste des mots possible dans un fichier externe. 
+
+
+
+Définition à la ligne 337 du fichier ruzzle.\+c.
+
+
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{d3/df5/ruzzle_8c_ad9429c78019005dc6e8e62a30166c64b_cgraph}
+\end{center}
+\end{figure}
+
+

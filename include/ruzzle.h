@@ -2,7 +2,10 @@
 #include <stdbool.h>
 
 #define N 4
-
+/********************************************//**
+ * \brief Énumération des différents bonus possibles
+ *
+ ***********************************************/
 typedef enum
 {
 	none    = 1,
@@ -12,6 +15,11 @@ typedef enum
     tripleM = 6
 }bonusEnum;
 
+
+/********************************************//**
+ * \brief Défini une case de la grille, l'élément 'visited' est utilisé lors de la recherche de mot
+ *
+ ***********************************************/
 typedef struct
 {
 	unsigned char character;
@@ -20,12 +28,22 @@ typedef struct
 	unsigned int visited;
 } cell;
 
+
+/********************************************//**
+ * \brief Défini des coordonnée d'une case de la grille
+ *
+ ***********************************************/
 typedef struct
 {
 	int x;
 	int y;
 }coord;
 
+
+/********************************************//**
+ * \brief défini le score du mot que l'on est en train de chercher.
+ *
+ ***********************************************/
 typedef struct
 {
 	int point;
@@ -39,4 +57,4 @@ void ajouter_mot(char * , int );
 void ajouter_score (cell [N][N], coord , t_score * );
 void init_visited (cell [N][N]);
 void find_word(cell [N][N], char []);
-int print_list(FILE * );
+void print_list();

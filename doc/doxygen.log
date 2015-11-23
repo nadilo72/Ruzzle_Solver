@@ -1,0 +1,70 @@
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:227: warning: argument 'cell' of command @param is not found in the argument list of add_score(cell ruzzle[N][N], coord pos, t_score *score)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:227: warning: argument 'coord' of command @param is not found in the argument list of add_score(cell ruzzle[N][N], coord pos, t_score *score)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:227: warning: argument 't_score' of command @param is not found in the argument list of add_score(cell ruzzle[N][N], coord pos, t_score *score)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:238: warning: The following parameters of add_score(cell ruzzle[N][N], coord pos, t_score *score) are not documented:
+  parameter 'ruzzle'
+  parameter 'pos'
+  parameter 'score'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:186: warning: argument 'char' of command @param is not found in the argument list of add_word(char *mot, int score)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:186: warning: argument 'int' of command @param is not found in the argument list of add_word(char *mot, int score)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:195: warning: The following parameters of add_word(char *mot, int score) are not documented:
+  parameter 'mot'
+  parameter 'score'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:92: warning: argument 'cell' of command @param is not found in the argument list of create_new_dico(cell ruzzle[N][N], FILE *dico)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:92: warning: argument 'FILE' of command @param is not found in the argument list of create_new_dico(cell ruzzle[N][N], FILE *dico)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:101: warning: The following parameters of create_new_dico(cell ruzzle[N][N], FILE *dico) are not documented:
+  parameter 'ruzzle'
+  parameter 'dico'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:151: warning: argument 'char' of command @param is not found in the argument list of find_letter(char c, coord *pos, cell ruzzle[N][N])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:151: warning: argument 'coord' of command @param is not found in the argument list of find_letter(char c, coord *pos, cell ruzzle[N][N])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:151: warning: argument 'cell' of command @param is not found in the argument list of find_letter(char c, coord *pos, cell ruzzle[N][N])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:159: warning: The following parameters of find_letter(char c, coord *pos, cell ruzzle[N][N]) are not documented:
+  parameter 'c'
+  parameter 'pos'
+  parameter 'ruzzle'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:275: warning: argument 'cell' of command @param is not found in the argument list of find_word(cell ruzzle[N][N], char mot[])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:275: warning: argument 'char' of command @param is not found in the argument list of find_word(cell ruzzle[N][N], char mot[])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:285: warning: The following parameters of find_word(cell ruzzle[N][N], char mot[]) are not documented:
+  parameter 'ruzzle'
+  parameter 'mot'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:18: warning: argument 'char' of command @param is not found in the argument list of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:18: warning: argument 'cell' of command @param is not found in the argument list of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:18: warning: argument 'FILE' of command @param is not found in the argument list of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:18: warning: argument 'FILE' of command @param is not found in the argument list of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:29: warning: The following parameters of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output) are not documented:
+  parameter 'entree'
+  parameter 'sortie'
+  parameter 'dico'
+  parameter 'output'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:253: warning: argument 'cell' of command @param is not found in the argument list of init_visited(cell ruzzle[N][N])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:261: warning: The following parameters of init_visited(cell ruzzle[N][N]) are not documented:
+  parameter 'ruzzle'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:92: warning: argument 'cell' of command @param is not found in the argument list of create_new_dico(cell ruzzle[N][N], FILE *dico)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:92: warning: argument 'FILE' of command @param is not found in the argument list of create_new_dico(cell ruzzle[N][N], FILE *dico)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.h:54: warning: The following parameters of create_new_dico(cell ruzzle[N][N], FILE *dico) are not documented:
+  parameter 'ruzzle'
+  parameter 'dico'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:151: warning: argument 'char' of command @param is not found in the argument list of find_letter(char c, coord *pos, cell ruzzle[N][N])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:151: warning: argument 'coord' of command @param is not found in the argument list of find_letter(char c, coord *pos, cell ruzzle[N][N])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:151: warning: argument 'cell' of command @param is not found in the argument list of find_letter(char c, coord *pos, cell ruzzle[N][N])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.h:55: warning: The following parameters of find_letter(char c, coord *pos, cell ruzzle[N][N]) are not documented:
+  parameter 'c'
+  parameter 'pos'
+  parameter 'ruzzle'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:275: warning: argument 'cell' of command @param is not found in the argument list of find_word(cell ruzzle[N][N], char mot[])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:275: warning: argument 'char' of command @param is not found in the argument list of find_word(cell ruzzle[N][N], char mot[])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.h:59: warning: The following parameters of find_word(cell ruzzle[N][N], char mot[]) are not documented:
+  parameter 'ruzzle'
+  parameter 'mot'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:18: warning: argument 'char' of command @param is not found in the argument list of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:18: warning: argument 'cell' of command @param is not found in the argument list of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:18: warning: argument 'FILE' of command @param is not found in the argument list of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:18: warning: argument 'FILE' of command @param is not found in the argument list of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output)
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.h:53: warning: The following parameters of init(char entree[], cell sortie[N][N], FILE *dico, FILE *output) are not documented:
+  parameter 'entree'
+  parameter 'sortie'
+  parameter 'dico'
+  parameter 'output'
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.c:253: warning: argument 'cell' of command @param is not found in the argument list of init_visited(cell ruzzle[N][N])
+D:/System/Users/Nadilo/Documents/GitHub/Ruzzle_Solver/CodeBlocks/ruzzle.h:58: warning: The following parameters of init_visited(cell ruzzle[N][N]) are not documented:
+  parameter 'ruzzle'

@@ -1,21 +1,37 @@
-﻿#include <stdlib.h>
+﻿
+/********************************************//**
+ * \file liste.c
+ * \brief Programme de gestion d'une liste
+ * \author Ewen C. Bastien B.
+ * \version 1.0
+ * \date 22/11/2015
+ *
+ * Gestion d'une liste doublement chainée contenant une chaine de caractère et un entier
+ *
+ ***********************************************/
+
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 
 /* Déclaration de la structure des éléments de la liste */
 
+/********************************************//**
+ * \brief Structure de donnée formant un élément de la liste
+ *
+ ***********************************************/
 typedef struct element
 {
-    char word[20];
-    int score;
-    struct element * pred;
-    struct element * succ;
+    char word[20];                              /**< Chaine de caractère enregistré dans l'élément de la chaine  */
+    int score;                                  /**< Score enregistré dans l'élément de la chaine */
+    struct element * pred;                      /**< Pointeur vers l'élément précedent */
+    struct element * succ;                      /**< Pointeur vers l'élément suivant */
 }t_element;
 
 /* Déclaration des indices de drapeau et d'élément courant */
-t_element * drapeau;
-t_element * ec;
+t_element * drapeau;                            /**< Pointeur sur l'élément initial de la liste. */
+t_element * ec;                                 /**< Pointeur sur l'élément courant de la liste. */
 
 
 /********************************************//**
@@ -44,13 +60,12 @@ bool liste_vide(void)
 
 
 /********************************************//**
- * \brief
+ * \brief Verifie si on se trouve encore dans la liste
  *
  * \return Renvoi un booleen à vrai si l'element courant est hors de la liste, faux sinon.
  *
  ***********************************************/
 bool hors_liste(void)
-
 {
 	return(ec==drapeau);
 }
@@ -72,7 +87,6 @@ void en_tete(void)
  *
  ***********************************************/
 void en_queue(void)
-
 {
 	if(!liste_vide())
 		ec = drapeau->pred;
@@ -84,7 +98,6 @@ void en_queue(void)
  *
  ***********************************************/
 void suivant(void)
-
 {
 	if(!hors_liste())
 		ec = ec->succ;
@@ -98,8 +111,7 @@ void suivant(void)
  * \param score : Le score enregistré dans la liste
  *
  ***********************************************/
-void valeur_elt(char * mot,int * score)
-
+void valeur_elt(char mot[20],int * score)
 {
 	if(!hors_liste())
         strcpy(mot,ec->word);
@@ -115,7 +127,6 @@ void valeur_elt(char * mot,int * score)
  *
  ***********************************************/
 void ajout_droit(char * inWord,int score)
-
 {
 	t_element * new;
 	if(liste_vide() || !hors_liste())
@@ -140,7 +151,6 @@ void ajout_droit(char * inWord,int score)
  *
  ***********************************************/
 void ajout_gauche(char * inWord,int score)
-/* Ajoute v a gauche de l'elt courant */
 {
 	t_element * new;
 	if(liste_vide() || !hors_liste())

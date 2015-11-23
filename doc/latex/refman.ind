@@ -1,0 +1,225 @@
+\begin{theindex}
+
+  \item {add\+\_\+score}
+    \subitem {ruzzle.\+c}, \hyperpage{24}
+  \item {add\+\_\+word}
+    \subitem {ruzzle.\+c}, \hyperpage{24}
+  \item {ajout\+\_\+droit}
+    \subitem {liste.\+c}, \hyperpage{14}
+    \subitem {liste.\+h}, \hyperpage{18}
+  \item {ajout\+\_\+gauche}
+    \subitem {liste.\+c}, \hyperpage{15}
+    \subitem {liste.\+h}, \hyperpage{19}
+  \item {ajouter\+\_\+mot}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+  \item {ajouter\+\_\+score}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {bonus}
+    \subitem {cell}, \hyperpage{7}
+  \item {bonus\+Enum}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {cell}, \hyperpage{7}
+    \subitem {bonus}, \hyperpage{7}
+    \subitem {character}, \hyperpage{8}
+    \subitem {point}, \hyperpage{8}
+    \subitem {visited}, \hyperpage{8}
+  \item {character}
+    \subitem {cell}, \hyperpage{8}
+  \item {coord}, \hyperpage{8}
+    \subitem {x}, \hyperpage{9}
+    \subitem {y}, \hyperpage{9}
+  \item {create\+\_\+new\+\_\+dico}
+    \subitem {ruzzle.\+c}, \hyperpage{25}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {double\+L}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+  \item {double\+M}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+  \item {drapeau}
+    \subitem {liste.\+c}, \hyperpage{17}
+
+  \indexspace
+
+  \item {ec}
+    \subitem {liste.\+c}, \hyperpage{17}
+  \item {element}, \hyperpage{9}
+    \subitem {pred}, \hyperpage{9}
+    \subitem {score}, \hyperpage{9}
+    \subitem {succ}, \hyperpage{10}
+    \subitem {word}, \hyperpage{10}
+  \item {en\+\_\+queue}
+    \subitem {liste.\+c}, \hyperpage{15}
+    \subitem {liste.\+h}, \hyperpage{19}
+  \item {en\+\_\+tete}
+    \subitem {liste.\+c}, \hyperpage{16}
+    \subitem {liste.\+h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {find\+\_\+letter}
+    \subitem {ruzzle.\+c}, \hyperpage{25}
+    \subitem {ruzzle.\+h}, \hyperpage{30}
+  \item {find\+\_\+word}
+    \subitem {ruzzle.\+c}, \hyperpage{26}
+    \subitem {ruzzle.\+h}, \hyperpage{30}
+
+  \indexspace
+
+  \item {hors\+\_\+liste}
+    \subitem {liste.\+c}, \hyperpage{16}
+    \subitem {liste.\+h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {init}
+    \subitem {ruzzle.\+c}, \hyperpage{26}
+    \subitem {ruzzle.\+h}, \hyperpage{31}
+  \item {init\+\_\+liste}
+    \subitem {liste.\+c}, \hyperpage{16}
+    \subitem {liste.\+h}, \hyperpage{20}
+  \item {init\+\_\+visited}
+    \subitem {ruzzle.\+c}, \hyperpage{27}
+    \subitem {ruzzle.\+h}, \hyperpage{31}
+
+  \indexspace
+
+  \item {liste.\+c}, \hyperpage{13}
+    \subitem {ajout\+\_\+droit}, \hyperpage{14}
+    \subitem {ajout\+\_\+gauche}, \hyperpage{15}
+    \subitem {drapeau}, \hyperpage{17}
+    \subitem {ec}, \hyperpage{17}
+    \subitem {en\+\_\+queue}, \hyperpage{15}
+    \subitem {en\+\_\+tete}, \hyperpage{16}
+    \subitem {hors\+\_\+liste}, \hyperpage{16}
+    \subitem {init\+\_\+liste}, \hyperpage{16}
+    \subitem {liste\+\_\+vide}, \hyperpage{16}
+    \subitem {suivant}, \hyperpage{16}
+    \subitem {t\+\_\+element}, \hyperpage{14}
+    \subitem {valeur\+\_\+elt}, \hyperpage{17}
+  \item {liste.\+h}, \hyperpage{18}
+    \subitem {ajout\+\_\+droit}, \hyperpage{18}
+    \subitem {ajout\+\_\+gauche}, \hyperpage{19}
+    \subitem {en\+\_\+queue}, \hyperpage{19}
+    \subitem {en\+\_\+tete}, \hyperpage{20}
+    \subitem {hors\+\_\+liste}, \hyperpage{20}
+    \subitem {init\+\_\+liste}, \hyperpage{20}
+    \subitem {liste\+\_\+vide}, \hyperpage{20}
+    \subitem {suivant}, \hyperpage{20}
+    \subitem {valeur\+\_\+elt}, \hyperpage{21}
+  \item {liste\+\_\+vide}
+    \subitem {liste.\+c}, \hyperpage{16}
+    \subitem {liste.\+h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\+c}, \hyperpage{22}
+  \item {main.\+c}, \hyperpage{21}
+    \subitem {main}, \hyperpage{22}
+    \subitem {N}, \hyperpage{22}
+  \item {multi}
+    \subitem {t\+\_\+score}, \hyperpage{10}
+
+  \indexspace
+
+  \item {N}
+    \subitem {main.\+c}, \hyperpage{22}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+  \item {none}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {point}
+    \subitem {cell}, \hyperpage{8}
+    \subitem {t\+\_\+score}, \hyperpage{11}
+  \item {pred}
+    \subitem {element}, \hyperpage{9}
+  \item {print\+\_\+list}
+    \subitem {ruzzle.\+c}, \hyperpage{27}
+    \subitem {ruzzle.\+h}, \hyperpage{31}
+
+  \indexspace
+
+  \item {R\+E\+A\+D\+M\+E.\+md}, \hyperpage{22}
+  \item {ruzzle.\+c}, \hyperpage{23}
+    \subitem {add\+\_\+score}, \hyperpage{24}
+    \subitem {add\+\_\+word}, \hyperpage{24}
+    \subitem {create\+\_\+new\+\_\+dico}, \hyperpage{25}
+    \subitem {find\+\_\+letter}, \hyperpage{25}
+    \subitem {find\+\_\+word}, \hyperpage{26}
+    \subitem {init}, \hyperpage{26}
+    \subitem {init\+\_\+visited}, \hyperpage{27}
+    \subitem {print\+\_\+list}, \hyperpage{27}
+  \item {ruzzle.\+h}, \hyperpage{27}
+    \subitem {ajouter\+\_\+mot}, \hyperpage{29}
+    \subitem {ajouter\+\_\+score}, \hyperpage{29}
+    \subitem {bonus\+Enum}, \hyperpage{29}
+    \subitem {create\+\_\+new\+\_\+dico}, \hyperpage{29}
+    \subitem {double\+L}, \hyperpage{29}
+    \subitem {double\+M}, \hyperpage{29}
+    \subitem {find\+\_\+letter}, \hyperpage{30}
+    \subitem {find\+\_\+word}, \hyperpage{30}
+    \subitem {init}, \hyperpage{31}
+    \subitem {init\+\_\+visited}, \hyperpage{31}
+    \subitem {N}, \hyperpage{29}
+    \subitem {none}, \hyperpage{29}
+    \subitem {print\+\_\+list}, \hyperpage{31}
+    \subitem {triple\+L}, \hyperpage{29}
+    \subitem {triple\+M}, \hyperpage{29}
+
+  \indexspace
+
+  \item {score}
+    \subitem {element}, \hyperpage{9}
+  \item {succ}
+    \subitem {element}, \hyperpage{10}
+  \item {suivant}
+    \subitem {liste.\+c}, \hyperpage{16}
+    \subitem {liste.\+h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {t\+\_\+element}
+    \subitem {liste.\+c}, \hyperpage{14}
+  \item {t\+\_\+score}, \hyperpage{10}
+    \subitem {multi}, \hyperpage{10}
+    \subitem {point}, \hyperpage{11}
+  \item {triple\+L}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+  \item {triple\+M}
+    \subitem {ruzzle.\+h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {valeur\+\_\+elt}
+    \subitem {liste.\+c}, \hyperpage{17}
+    \subitem {liste.\+h}, \hyperpage{21}
+  \item {visited}
+    \subitem {cell}, \hyperpage{8}
+
+  \indexspace
+
+  \item {word}
+    \subitem {element}, \hyperpage{10}
+
+  \indexspace
+
+  \item {x}
+    \subitem {coord}, \hyperpage{9}
+
+  \indexspace
+
+  \item {y}
+    \subitem {coord}, \hyperpage{9}
+
+\end{theindex}

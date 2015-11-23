@@ -1,0 +1,7 @@
+<map id="print_list" name="print_list">
+<area shape="rect" id="node2" href="$d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231" title="Fonction permettant de savoir si la liste contient au moins un element. " alt="" coords="250,5,325,32"/>
+<area shape="rect" id="node3" href="$d3/dc8/liste_8c.html#a68274781c5c541e03951b5e3f408e1d2" title="Positionne en tete de la liste. " alt="" coords="129,31,195,57"/>
+<area shape="rect" id="node4" href="$d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd" title="Verifie si on se trouve encore dans la liste. " alt="" coords="248,132,327,159"/>
+<area shape="rect" id="node5" href="$d3/dc8/liste_8c.html#afa1ade166b772261d348f25527fa3f29" title="Renvoi les valeurs comprises dans l&#39;element courant. " alt="" coords="124,132,200,159"/>
+<area shape="rect" id="node6" href="$d3/dc8/liste_8c.html#a5cd9c9ae9a2d39e81678f35d50540d36" title="Positionne sur l&#39;element suivant. " alt="" coords="131,183,193,209"/>
+</map>

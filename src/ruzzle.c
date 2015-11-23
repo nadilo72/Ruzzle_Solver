@@ -1,17 +1,29 @@
-﻿#include <string.h>
+﻿
+/********************************************//**
+ * \file ruzzle.c
+ * \brief Fonctions du ruzzle solver
+ * \author Ewen C. Bastien B.
+ * \version 1.0
+ * \date 22/11/2015
+ *
+ * Les différentes fonction nécessaire à la résolution d'une grille de ruzzle
+ *
+ ***********************************************/
+
+#include <string.h>
 #include <ctype.h>
-#include "ruzzle.h"
-#include "liste.h"
-/**	
+#include "../include/ruzzle.h"
+#include "../include/liste.h"
+/**
 	\brief Fonction d'initialisation globale
-	
+
 	\param char entree[] les lettres de la grille du ruzzle.
 	\param cell sortie[N][N] la transformé en tableau de entree[].
 	\param FILE * dico le dictionnaire complet
 	\param FILE * output le fichier où seront placé les mot possible.
-	
+
 	\return Renvoit un code d'erreur si besoin, 0 sinon.
-	
+
 	Initialise la grille avec les lettre passées en paramètre et verifie que les fichiers soient accessibles.
 **/
 int init(char entree[], cell sortie[N][N], FILE * dico, FILE * output)
@@ -180,7 +192,7 @@ bool find_letter(char c, coord * pos, cell ruzzle[N][N])
  * l'insertion est effectué de sorte à garder un ordre décroisant.
  *
  ***********************************************/
-void ajouter_mot(char * mot, int score)
+void add_word(char * mot, int score)
 {
     bool place=false;
     char tmpWord[20];
@@ -223,7 +235,7 @@ void ajouter_mot(char * mot, int score)
  * au score (comptabilise également les multiplicateurs de mots).
  *
  ***********************************************/
-void ajouter_score (cell ruzzle[N][N], coord pos, t_score * score)
+void add_score (cell ruzzle[N][N], coord pos, t_score * score)
 {
 	if (ruzzle[pos.x][pos.y].bonus < 4)
 	{
@@ -264,7 +276,7 @@ void init_visited (cell ruzzle[N][N])
  *
  * \param cell ruzzle[N][N] grille du ruzzle
  * \param char mot[] un mot du dictionnaire à chercher dans la grille
- * 
+ *
  * find_word prend en paramètre la grille du ruzzle et un mot,
  * cherche le mot a l'aide d'autre fonction et l'inscrit dans
  * la liste des solution avec son score.
@@ -289,7 +301,7 @@ void find_word(cell ruzzle[N][N], char mot[])
 				coordonnee.y=j;
 				trouve=true;
 				ruzzle[coordonnee.x][coordonnee.y].visited=1;
-				ajouter_score(ruzzle, coordonnee, &score);
+				add_score(ruzzle, coordonnee, &score);
 			}
 		}
 	}
@@ -299,7 +311,7 @@ void find_word(cell ruzzle[N][N], char mot[])
 		{
 			if(strlen(mot)>1)
             {
-                ajouter_score(ruzzle, coordonnee, &score);
+                add_score(ruzzle, coordonnee, &score);
             }
 		}
 		else
@@ -311,7 +323,7 @@ void find_word(cell ruzzle[N][N], char mot[])
 	{
 		if(strlen(mot)>1)
 		{
-		    ajouter_mot(mot, score.point*score.multi);
+		    add_word(mot, score.point*score.multi);
 		}
 	}
 	init_visited(ruzzle);
@@ -324,19 +336,18 @@ void find_word(cell ruzzle[N][N], char mot[])
  ***********************************************/
 void print_list()
 {
-    char mot[30];
+    char mot[20];
     int score;
     FILE * out=fopen("output.txt","w");
     if(!liste_vide())
     {
-        en_queue();
+        en_tete();
         while(!hors_liste())
         {
-            valeur_elt(mot,&score);
+            valeur_elt(&mot,&score);
             fprintf(out,"%i - %s\n",score,mot);
-            precedent();
+            suivant();
         }
     }
     fclose(out);
 }
-

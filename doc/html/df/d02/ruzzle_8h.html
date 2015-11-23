@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Ruzzle Solver: Référence du fichier ruzzle.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ruzzle Solver
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.10 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('df/d02/ruzzle_8h.html','../../');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier ruzzle.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de ruzzle.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/ddf/ruzzle_8h__incl.png" border="0" usemap="#ruzzle_8h" alt=""/></div>
+<map name="ruzzle_8h" id="ruzzle_8h">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d10/ruzzle_8h__dep__incl.png" border="0" usemap="#ruzzle_8hdep" alt=""/></div>
+<map name="ruzzle_8hdep" id="ruzzle_8hdep">
+<area shape="rect" id="node2" href="../../d0/d29/main_8c.html" title="Programme principal. " alt="" coords="5,80,67,107"/>
+<area shape="rect" id="node3" href="../../d3/df5/ruzzle_8c.html" title="Fonctions du ruzzle solver. " alt="" coords="91,80,159,107"/>
+</map>
+</div>
+</div>
+<p><a href="../../df/d02/ruzzle_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d76/structcell.html">cell</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Défini une case de la grille, l'élément 'visited' est utilisé lors de la recherche de mot.  <a href="../../db/d76/structcell.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc6/structcoord.html">coord</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Défini des coordonnée d'une case de la grille.  <a href="../../d6/dc6/structcoord.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfc/structt__score.html">t_score</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">défini le score du mot que l'on est en train de chercher.  <a href="../../d7/dfc/structt__score.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0240ac851181b84ac374872dc5434ee4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a0240ac851181b84ac374872dc5434ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:af98046282a9e785a234a2ea7b10681f2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#af98046282a9e785a234a2ea7b10681f2">bonusEnum</a> { <br />
+&#160;&#160;<a class="el" href="../../df/d02/ruzzle_8h.html#af98046282a9e785a234a2ea7b10681f2ab7e4e0120a041dbe6528b050c04269e0">none</a> = 1, 
+<a class="el" href="../../df/d02/ruzzle_8h.html#af98046282a9e785a234a2ea7b10681f2ab53f15e4bbe81ad687b79e42ca75244e">doubleL</a> = 2, 
+<a class="el" href="../../df/d02/ruzzle_8h.html#af98046282a9e785a234a2ea7b10681f2a471cc885602be95c5808f4b6456cb94e">tripleL</a> = 3, 
+<a class="el" href="../../df/d02/ruzzle_8h.html#af98046282a9e785a234a2ea7b10681f2a600130c1478bc563fb6b2e92e07a3aed">doubleM</a> = 4, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d02/ruzzle_8h.html#af98046282a9e785a234a2ea7b10681f2a49f2ded5d4ef00d67a76019ae3375a9e">tripleM</a> = 6
+<br />
+ }<tr class="memdesc:af98046282a9e785a234a2ea7b10681f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Énumération des différents bonus possibles.  <a href="../../df/d02/ruzzle_8h.html#af98046282a9e785a234a2ea7b10681f2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af98046282a9e785a234a2ea7b10681f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:acb1b1746387e6aa6adcaac13a060b15a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#acb1b1746387e6aa6adcaac13a060b15a">init</a> (char[], <a class="el" href="../../db/d76/structcell.html">cell</a>[<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>][<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>], FILE *, FILE *)</td></tr>
+<tr class="memdesc:acb1b1746387e6aa6adcaac13a060b15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'initialisation globale.  <a href="#acb1b1746387e6aa6adcaac13a060b15a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acb1b1746387e6aa6adcaac13a060b15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a07b0e604daf115ce1091c0614da22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#a08a07b0e604daf115ce1091c0614da22">create_new_dico</a> (<a class="el" href="../../db/d76/structcell.html">cell</a>[<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>][<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>], FILE *)</td></tr>
+<tr class="memdesc:a08a07b0e604daf115ce1091c0614da22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un dictionaire élagué  <a href="#a08a07b0e604daf115ce1091c0614da22">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a08a07b0e604daf115ce1091c0614da22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad590be2d37e435837a2ea6137c27c05a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#ad590be2d37e435837a2ea6137c27c05a">find_letter</a> (char, <a class="el" href="../../d6/dc6/structcoord.html">coord</a> *, <a class="el" href="../../db/d76/structcell.html">cell</a>[<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>][<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>])</td></tr>
+<tr class="memdesc:ad590be2d37e435837a2ea6137c27c05a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trouve la lettre autour de la position passée en paramètre.  <a href="#ad590be2d37e435837a2ea6137c27c05a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad590be2d37e435837a2ea6137c27c05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0f456b7e11b42478bd1062c4aa7625"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#a2e0f456b7e11b42478bd1062c4aa7625">ajouter_mot</a> (char *, int)</td></tr>
+<tr class="separator:a2e0f456b7e11b42478bd1062c4aa7625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b51c038f96e507ab15d6ef3edfa3210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#a8b51c038f96e507ab15d6ef3edfa3210">ajouter_score</a> (<a class="el" href="../../db/d76/structcell.html">cell</a>[<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>][<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>], <a class="el" href="../../d6/dc6/structcoord.html">coord</a>, <a class="el" href="../../d7/dfc/structt__score.html">t_score</a> *)</td></tr>
+<tr class="separator:a8b51c038f96e507ab15d6ef3edfa3210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605e27e92e36decc89320b12d494e6d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#a605e27e92e36decc89320b12d494e6d8">init_visited</a> (<a class="el" href="../../db/d76/structcell.html">cell</a>[<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>][<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>])</td></tr>
+<tr class="memdesc:a605e27e92e36decc89320b12d494e6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réinitialise le statut visité de chaque case.  <a href="#a605e27e92e36decc89320b12d494e6d8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a605e27e92e36decc89320b12d494e6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6668f0d4ced5473df624a0cccb0dcf6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#a6668f0d4ced5473df624a0cccb0dcf6c">find_word</a> (<a class="el" href="../../db/d76/structcell.html">cell</a>[<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>][<a class="el" href="../../df/d02/ruzzle_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>], char[])</td></tr>
+<tr class="memdesc:a6668f0d4ced5473df624a0cccb0dcf6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cherche un mot dans la grille.  <a href="#a6668f0d4ced5473df624a0cccb0dcf6c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6668f0d4ced5473df624a0cccb0dcf6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9429c78019005dc6e8e62a30166c64b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d02/ruzzle_8h.html#ad9429c78019005dc6e8e62a30166c64b">print_list</a> ()</td></tr>
+<tr class="memdesc:ad9429c78019005dc6e8e62a30166c64b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregiste la liste des mots possible dans un fichier externe.  <a href="#ad9429c78019005dc6e8e62a30166c64b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad9429c78019005dc6e8e62a30166c64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a0240ac851181b84ac374872dc5434ee4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define N&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="../../df/d02/ruzzle_8h_source.html#l00004">4</a> du fichier <a class="el" href="../../df/d02/ruzzle_8h_source.html">ruzzle.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a class="anchor" id="af98046282a9e785a234a2ea7b10681f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../df/d02/ruzzle_8h.html#af98046282a9e785a234a2ea7b10681f2">bonusEnum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Énumération des différents bonus possibles. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a class="anchor" id="af98046282a9e785a234a2ea7b10681f2ab7e4e0120a041dbe6528b050c04269e0"></a>none&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af98046282a9e785a234a2ea7b10681f2ab53f15e4bbe81ad687b79e42ca75244e"></a>doubleL&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af98046282a9e785a234a2ea7b10681f2a471cc885602be95c5808f4b6456cb94e"></a>tripleL&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af98046282a9e785a234a2ea7b10681f2a600130c1478bc563fb6b2e92e07a3aed"></a>doubleM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af98046282a9e785a234a2ea7b10681f2a49f2ded5d4ef00d67a76019ae3375a9e"></a>tripleM&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Définition à la ligne <a class="el" href="../../df/d02/ruzzle_8h_source.html#l00009">9</a> du fichier <a class="el" href="../../df/d02/ruzzle_8h_source.html">ruzzle.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a2e0f456b7e11b42478bd1062c4aa7625"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ajouter_mot </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b51c038f96e507ab15d6ef3edfa3210"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ajouter_score </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d76/structcell.html">cell</a>&#160;</td>
+          <td class="paramname">[N][N], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/dc6/structcoord.html">coord</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/dfc/structt__score.html">t_score</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08a07b0e604daf115ce1091c0614da22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int create_new_dico </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d76/structcell.html">cell</a>&#160;</td>
+          <td class="paramname"><em>ruzzle</em>[N][N], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>dico</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un dictionaire élagué </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cell</td><td>ruzzle[N][N] : matrice du ruzzle </td></tr>
+    <tr><td class="paramname">FILE</td><td>* dico : dictionnaire complet </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>renvoie toujours 0 (pourait être amélioré en renvoiyant un code d'erreur)</dd></dl>
+<p>Crée un nouveau dictionnaire appelé nexdico.txt qui ne contiend que les mot dont les lettres sont présentes dans la grille. Cette fonction permet de réduire la taille du fichier parcouru de 3.6Mo à environ 800Ko. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d3/df5/ruzzle_8c_source.html#l00101">101</a> du fichier <a class="el" href="../../d3/df5/ruzzle_8c_source.html">ruzzle.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad590be2d37e435837a2ea6137c27c05a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool find_letter </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/dc6/structcoord.html">coord</a> *&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d76/structcell.html">cell</a>&#160;</td>
+          <td class="paramname"><em>ruzzle</em>[N][N]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Trouve la lettre autour de la position passée en paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char</td><td>c charactère recherché </td></tr>
+    <tr><td class="paramname">coord</td><td>* pos position autour de laquel chercher </td></tr>
+    <tr><td class="paramname">cell</td><td>ruzzle[N][N] : grille du ruzzle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>retourne true si la lettre à été trouvé, false sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d3/df5/ruzzle_8c_source.html#l00159">159</a> du fichier <a class="el" href="../../d3/df5/ruzzle_8c_source.html">ruzzle.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6668f0d4ced5473df624a0cccb0dcf6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void find_word </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d76/structcell.html">cell</a>&#160;</td>
+          <td class="paramname"><em>ruzzle</em>[N][N], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>mot</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cherche un mot dans la grille. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cell</td><td>ruzzle[N][N] grille du ruzzle </td></tr>
+    <tr><td class="paramname">char</td><td>mot[] un mot du dictionnaire à chercher dans la grille</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>find_word prend en paramètre la grille du ruzzle et un mot, cherche le mot a l'aide d'autre fonction et l'inscrit dans la liste des solution avec son score. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d3/df5/ruzzle_8c_source.html#l00285">285</a> du fichier <a class="el" href="../../d3/df5/ruzzle_8c_source.html">ruzzle.c</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d02/ruzzle_8h_a6668f0d4ced5473df624a0cccb0dcf6c_cgraph.png" border="0" usemap="#df/d02/ruzzle_8h_a6668f0d4ced5473df624a0cccb0dcf6c_cgraph" alt=""/></div>
+<map name="df/d02/ruzzle_8h_a6668f0d4ced5473df624a0cccb0dcf6c_cgraph" id="df/d02/ruzzle_8h_a6668f0d4ced5473df624a0cccb0dcf6c_cgraph">
+<area shape="rect" id="node2" href="../../d3/df5/ruzzle_8c.html#a02b6897a90a34e388aa934e00d35f66d" title="Ajoute le score de la lettre courante. " alt="" coords="129,58,212,85"/>
+<area shape="rect" id="node3" href="../../d3/df5/ruzzle_8c.html#ad285e4b1ee303ca9809b0aeb31d62685" title="Trouve la lettre autour de la position passée en paramètre. " alt="" coords="131,109,210,136"/>
+<area shape="rect" id="node4" href="../../d3/df5/ruzzle_8c.html#ab7e43a2c2790bc312915ec6654ec59ec" title="Ajoute un mot et son score dans une liste triée. " alt="" coords="132,160,209,186"/>
+<area shape="rect" id="node13" href="../../d3/df5/ruzzle_8c.html#ac56429d3c5f2133304acb4b6e461cc1b" title="Réinitialise le statut visité de chaque case. " alt="" coords="129,210,212,237"/>
+<area shape="rect" id="node5" href="../../d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231" title="Fonction permettant de savoir si la liste contient au moins un element. " alt="" coords="409,84,483,110"/>
+<area shape="rect" id="node6" href="../../d3/dc8/liste_8c.html#a68274781c5c541e03951b5e3f408e1d2" title="Positionne en tete de la liste. " alt="" coords="277,33,342,60"/>
+<area shape="rect" id="node7" href="../../d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd" title="Verifie si on se trouve encore dans la liste. " alt="" coords="407,236,485,262"/>
+<area shape="rect" id="node8" href="../../d3/dc8/liste_8c.html#afa1ade166b772261d348f25527fa3f29" title="Renvoi les valeurs comprises dans l&#39;element courant. " alt="" coords="271,286,347,313"/>
+<area shape="rect" id="node9" href="../../d3/dc8/liste_8c.html#a87ff26aaf018f7d1cc2a926aea1d488a" title="Ajoute un nouvel élément a gauche de l&#39;elt courant. " alt="" coords="260,134,359,161"/>
+<area shape="rect" id="node10" href="../../d3/dc8/liste_8c.html#a5cd9c9ae9a2d39e81678f35d50540d36" title="Positionne sur l&#39;element suivant. " alt="" coords="278,337,341,364"/>
+<area shape="rect" id="node11" href="../../d3/dc8/liste_8c.html#aaacc4277d423e99a9c929cdadb00a65c" title="Positionne en queue de la liste. " alt="" coords="270,84,349,110"/>
+<area shape="rect" id="node12" href="../../d3/dc8/liste_8c.html#ae5922bfd958a4a1bbfee1cb8c2756684" title="Ajoute un nouvel élément a droite de l&#39;elt courant. " alt="" coords="268,185,351,212"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acb1b1746387e6aa6adcaac13a060b15a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int init </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>entree</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d76/structcell.html">cell</a>&#160;</td>
+          <td class="paramname"><em>sortie</em>[N][N], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>dico</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>output</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'initialisation globale. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">char</td><td>entree[] les lettres de la grille du ruzzle. </td></tr>
+    <tr><td class="paramname">cell</td><td>sortie[N][N] la transformé en tableau de entree[]. </td></tr>
+    <tr><td class="paramname">FILE</td><td>* dico le dictionnaire complet </td></tr>
+    <tr><td class="paramname">FILE</td><td>* output le fichier où seront placé les mot possible.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Renvoit un code d'erreur si besoin, 0 sinon.</dd></dl>
+<p>Initialise la grille avec les lettre passées en paramètre et verifie que les fichiers soient accessibles. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d3/df5/ruzzle_8c_source.html#l00029">29</a> du fichier <a class="el" href="../../d3/df5/ruzzle_8c_source.html">ruzzle.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a605e27e92e36decc89320b12d494e6d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_visited </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d76/structcell.html">cell</a>&#160;</td>
+          <td class="paramname"><em>ruzzle</em>[N][N]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Réinitialise le statut visité de chaque case. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cell</td><td>ruzzle[N][N] grille du ruzzle</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>init_visit prend la grille du ruzzle en paramètre et réinitialise le booléen qui indique le passage ou non sur une case en le passant à false. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d3/df5/ruzzle_8c_source.html#l00261">261</a> du fichier <a class="el" href="../../d3/df5/ruzzle_8c_source.html">ruzzle.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9429c78019005dc6e8e62a30166c64b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_list </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enregiste la liste des mots possible dans un fichier externe. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d3/df5/ruzzle_8c_source.html#l00337">337</a> du fichier <a class="el" href="../../d3/df5/ruzzle_8c_source.html">ruzzle.c</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d02/ruzzle_8h_ad9429c78019005dc6e8e62a30166c64b_cgraph.png" border="0" usemap="#df/d02/ruzzle_8h_ad9429c78019005dc6e8e62a30166c64b_cgraph" alt=""/></div>
+<map name="df/d02/ruzzle_8h_ad9429c78019005dc6e8e62a30166c64b_cgraph" id="df/d02/ruzzle_8h_ad9429c78019005dc6e8e62a30166c64b_cgraph">
+<area shape="rect" id="node2" href="../../d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231" title="Fonction permettant de savoir si la liste contient au moins un element. " alt="" coords="250,5,325,32"/>
+<area shape="rect" id="node3" href="../../d3/dc8/liste_8c.html#a68274781c5c541e03951b5e3f408e1d2" title="Positionne en tete de la liste. " alt="" coords="129,31,195,57"/>
+<area shape="rect" id="node4" href="../../d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd" title="Verifie si on se trouve encore dans la liste. " alt="" coords="248,132,327,159"/>
+<area shape="rect" id="node5" href="../../d3/dc8/liste_8c.html#afa1ade166b772261d348f25527fa3f29" title="Renvoi les valeurs comprises dans l&#39;element courant. " alt="" coords="124,132,200,159"/>
+<area shape="rect" id="node6" href="../../d3/dc8/liste_8c.html#a5cd9c9ae9a2d39e81678f35d50540d36" title="Positionne sur l&#39;element suivant. " alt="" coords="131,183,193,209"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../df/d02/ruzzle_8h.html">ruzzle.h</a></li>
+    <li class="footer">Généré le Lundi 23 Novembre 2015 21:43:02 pour Ruzzle Solver par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

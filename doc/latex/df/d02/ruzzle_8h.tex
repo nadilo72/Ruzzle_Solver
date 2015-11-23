@@ -1,0 +1,293 @@
+\hypertarget{ruzzle_8h}{}\section{Référence du fichier ruzzle.\+h}
+\label{ruzzle_8h}\index{ruzzle.\+h@{ruzzle.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+Graphe des dépendances par inclusion de ruzzle.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{df/ddf/ruzzle_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{d5/d10/ruzzle_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcell}{cell}
+\begin{DoxyCompactList}\small\item\em Défini une case de la grille, l\textquotesingle{}élément \textquotesingle{}visited\textquotesingle{} est utilisé lors de la recherche de mot. \end{DoxyCompactList}\item 
+struct \hyperlink{structcoord}{coord}
+\begin{DoxyCompactList}\small\item\em Défini des coordonnée d\textquotesingle{}une case de la grille. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__score}{t\+\_\+score}
+\begin{DoxyCompactList}\small\item\em défini le score du mot que l\textquotesingle{}on est en train de chercher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}~4
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2}{bonus\+Enum} \{ \\*
+\hyperlink{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2ab7e4e0120a041dbe6528b050c04269e0}{none} = 1, 
+\hyperlink{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2ab53f15e4bbe81ad687b79e42ca75244e}{double\+L} = 2, 
+\hyperlink{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a471cc885602be95c5808f4b6456cb94e}{triple\+L} = 3, 
+\hyperlink{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a600130c1478bc563fb6b2e92e07a3aed}{double\+M} = 4, 
+\\*
+\hyperlink{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a49f2ded5d4ef00d67a76019ae3375a9e}{triple\+M} = 6
+ \}\begin{DoxyCompactList}\small\item\em Énumération des différents bonus possibles. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ruzzle_8h_acb1b1746387e6aa6adcaac13a060b15a}{init} (char\mbox{[}$\,$\mbox{]}, \hyperlink{structcell}{cell}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}, F\+I\+L\+E $\ast$, F\+I\+L\+E $\ast$)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}initialisation globale. \end{DoxyCompactList}\item 
+int \hyperlink{ruzzle_8h_a08a07b0e604daf115ce1091c0614da22}{create\+\_\+new\+\_\+dico} (\hyperlink{structcell}{cell}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}, F\+I\+L\+E $\ast$)
+\begin{DoxyCompactList}\small\item\em Crée un dictionaire élagué \end{DoxyCompactList}\item 
+bool \hyperlink{ruzzle_8h_ad590be2d37e435837a2ea6137c27c05a}{find\+\_\+letter} (char, \hyperlink{structcoord}{coord} $\ast$, \hyperlink{structcell}{cell}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Trouve la lettre autour de la position passée en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{ruzzle_8h_a2e0f456b7e11b42478bd1062c4aa7625}{ajouter\+\_\+mot} (char $\ast$, int)
+\item 
+void \hyperlink{ruzzle_8h_a8b51c038f96e507ab15d6ef3edfa3210}{ajouter\+\_\+score} (\hyperlink{structcell}{cell}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}, \hyperlink{structcoord}{coord}, \hyperlink{structt__score}{t\+\_\+score} $\ast$)
+\item 
+void \hyperlink{ruzzle_8h_a605e27e92e36decc89320b12d494e6d8}{init\+\_\+visited} (\hyperlink{structcell}{cell}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Réinitialise le statut visité de chaque case. \end{DoxyCompactList}\item 
+void \hyperlink{ruzzle_8h_a6668f0d4ced5473df624a0cccb0dcf6c}{find\+\_\+word} (\hyperlink{structcell}{cell}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}\mbox{[}\hyperlink{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{N}\mbox{]}, char\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Cherche un mot dans la grille. \end{DoxyCompactList}\item 
+void \hyperlink{ruzzle_8h_ad9429c78019005dc6e8e62a30166c64b}{print\+\_\+list} ()
+\begin{DoxyCompactList}\small\item\em Enregiste la liste des mots possible dans un fichier externe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des macros}
+\hypertarget{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}{}\index{ruzzle.\+h@{ruzzle.\+h}!N@{N}}
+\index{N@{N}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{N}]{\setlength{\rightskip}{0pt plus 5cm}\#define N~4}\label{ruzzle_8h_a0240ac851181b84ac374872dc5434ee4}
+
+
+Définition à la ligne 4 du fichier ruzzle.\+h.
+
+
+
+\subsection{Documentation du type de l\textquotesingle{}énumération}
+\hypertarget{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2}{}\index{ruzzle.\+h@{ruzzle.\+h}!bonus\+Enum@{bonus\+Enum}}
+\index{bonus\+Enum@{bonus\+Enum}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{bonus\+Enum}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf bonus\+Enum}}\label{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2}
+
+
+Énumération des différents bonus possibles. 
+
+\begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{none@{none}!ruzzle.\+h@{ruzzle.\+h}}\index{ruzzle.\+h@{ruzzle.\+h}!none@{none}}\item[{\em 
+\hypertarget{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2ab7e4e0120a041dbe6528b050c04269e0}{}none\label{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2ab7e4e0120a041dbe6528b050c04269e0}
+}]\index{double\+L@{double\+L}!ruzzle.\+h@{ruzzle.\+h}}\index{ruzzle.\+h@{ruzzle.\+h}!double\+L@{double\+L}}\item[{\em 
+\hypertarget{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2ab53f15e4bbe81ad687b79e42ca75244e}{}double\+L\label{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2ab53f15e4bbe81ad687b79e42ca75244e}
+}]\index{triple\+L@{triple\+L}!ruzzle.\+h@{ruzzle.\+h}}\index{ruzzle.\+h@{ruzzle.\+h}!triple\+L@{triple\+L}}\item[{\em 
+\hypertarget{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a471cc885602be95c5808f4b6456cb94e}{}triple\+L\label{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a471cc885602be95c5808f4b6456cb94e}
+}]\index{double\+M@{double\+M}!ruzzle.\+h@{ruzzle.\+h}}\index{ruzzle.\+h@{ruzzle.\+h}!double\+M@{double\+M}}\item[{\em 
+\hypertarget{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a600130c1478bc563fb6b2e92e07a3aed}{}double\+M\label{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a600130c1478bc563fb6b2e92e07a3aed}
+}]\index{triple\+M@{triple\+M}!ruzzle.\+h@{ruzzle.\+h}}\index{ruzzle.\+h@{ruzzle.\+h}!triple\+M@{triple\+M}}\item[{\em 
+\hypertarget{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a49f2ded5d4ef00d67a76019ae3375a9e}{}triple\+M\label{ruzzle_8h_af98046282a9e785a234a2ea7b10681f2a49f2ded5d4ef00d67a76019ae3375a9e}
+}]\end{description}
+\end{Desc}
+
+
+Définition à la ligne 9 du fichier ruzzle.\+h.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{ruzzle_8h_a2e0f456b7e11b42478bd1062c4aa7625}{}\index{ruzzle.\+h@{ruzzle.\+h}!ajouter\+\_\+mot@{ajouter\+\_\+mot}}
+\index{ajouter\+\_\+mot@{ajouter\+\_\+mot}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{ajouter\+\_\+mot(char $\ast$, int)}]{\setlength{\rightskip}{0pt plus 5cm}void ajouter\+\_\+mot (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8h_a2e0f456b7e11b42478bd1062c4aa7625}
+\hypertarget{ruzzle_8h_a8b51c038f96e507ab15d6ef3edfa3210}{}\index{ruzzle.\+h@{ruzzle.\+h}!ajouter\+\_\+score@{ajouter\+\_\+score}}
+\index{ajouter\+\_\+score@{ajouter\+\_\+score}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{ajouter\+\_\+score(cell[N][N], coord, t\+\_\+score $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}void ajouter\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{{\bf cell}}]{\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{{\bf coord}}]{, }
+\item[{{\bf t\+\_\+score} $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8h_a8b51c038f96e507ab15d6ef3edfa3210}
+\hypertarget{ruzzle_8h_a08a07b0e604daf115ce1091c0614da22}{}\index{ruzzle.\+h@{ruzzle.\+h}!create\+\_\+new\+\_\+dico@{create\+\_\+new\+\_\+dico}}
+\index{create\+\_\+new\+\_\+dico@{create\+\_\+new\+\_\+dico}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{create\+\_\+new\+\_\+dico(cell[N][N], F\+I\+L\+E $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}int create\+\_\+new\+\_\+dico (
+\begin{DoxyParamCaption}
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{F\+I\+L\+E $\ast$}]{dico}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8h_a08a07b0e604daf115ce1091c0614da22}
+
+
+Crée un dictionaire élagué 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} \+: matrice du ruzzle \\
+\hline
+{\em F\+I\+L\+E} & $\ast$ dico \+: dictionnaire complet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+renvoie toujours 0 (pourait être amélioré en renvoiyant un code d\textquotesingle{}erreur)
+\end{DoxyReturn}
+Crée un nouveau dictionnaire appelé nexdico.\+txt qui ne contiend que les mot dont les lettres sont présentes dans la grille. Cette fonction permet de réduire la taille du fichier parcouru de 3.\+6\+Mo à environ 800\+Ko. 
+
+Définition à la ligne 101 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8h_ad590be2d37e435837a2ea6137c27c05a}{}\index{ruzzle.\+h@{ruzzle.\+h}!find\+\_\+letter@{find\+\_\+letter}}
+\index{find\+\_\+letter@{find\+\_\+letter}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{find\+\_\+letter(char, coord $\ast$, cell[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}bool find\+\_\+letter (
+\begin{DoxyParamCaption}
+\item[{char}]{c, }
+\item[{{\bf coord} $\ast$}]{pos, }
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8h_ad590be2d37e435837a2ea6137c27c05a}
+
+
+Trouve la lettre autour de la position passée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em char} & c charactère recherché \\
+\hline
+{\em coord} & $\ast$ pos position autour de laquel chercher \\
+\hline
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} \+: grille du ruzzle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+retourne true si la lettre à été trouvé, false sinon. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 159 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8h_a6668f0d4ced5473df624a0cccb0dcf6c}{}\index{ruzzle.\+h@{ruzzle.\+h}!find\+\_\+word@{find\+\_\+word}}
+\index{find\+\_\+word@{find\+\_\+word}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{find\+\_\+word(cell[N][N], char[])}]{\setlength{\rightskip}{0pt plus 5cm}void find\+\_\+word (
+\begin{DoxyParamCaption}
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{char}]{mot\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8h_a6668f0d4ced5473df624a0cccb0dcf6c}
+
+
+Cherche un mot dans la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} grille du ruzzle \\
+\hline
+{\em char} & mot\mbox{[}\mbox{]} un mot du dictionnaire à chercher dans la grille\\
+\hline
+\end{DoxyParams}
+find\+\_\+word prend en paramètre la grille du ruzzle et un mot, cherche le mot a l\textquotesingle{}aide d\textquotesingle{}autre fonction et l\textquotesingle{}inscrit dans la liste des solution avec son score. 
+
+Définition à la ligne 285 du fichier ruzzle.\+c.
+
+
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d02/ruzzle_8h_a6668f0d4ced5473df624a0cccb0dcf6c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ruzzle_8h_acb1b1746387e6aa6adcaac13a060b15a}{}\index{ruzzle.\+h@{ruzzle.\+h}!init@{init}}
+\index{init@{init}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{init(char[], cell[N][N], F\+I\+L\+E $\ast$, F\+I\+L\+E $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}int init (
+\begin{DoxyParamCaption}
+\item[{char}]{entree\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf cell}}]{sortie\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{F\+I\+L\+E $\ast$}]{dico, }
+\item[{F\+I\+L\+E $\ast$}]{output}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8h_acb1b1746387e6aa6adcaac13a060b15a}
+
+
+Fonction d\textquotesingle{}initialisation globale. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em char} & entree\mbox{[}\mbox{]} les lettres de la grille du ruzzle. \\
+\hline
+{\em cell} & sortie\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} la transformé en tableau de entree\mbox{[}\mbox{]}. \\
+\hline
+{\em F\+I\+L\+E} & $\ast$ dico le dictionnaire complet \\
+\hline
+{\em F\+I\+L\+E} & $\ast$ output le fichier où seront placé les mot possible.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Renvoit un code d\textquotesingle{}erreur si besoin, 0 sinon.
+\end{DoxyReturn}
+Initialise la grille avec les lettre passées en paramètre et verifie que les fichiers soient accessibles. 
+
+Définition à la ligne 29 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8h_a605e27e92e36decc89320b12d494e6d8}{}\index{ruzzle.\+h@{ruzzle.\+h}!init\+\_\+visited@{init\+\_\+visited}}
+\index{init\+\_\+visited@{init\+\_\+visited}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{init\+\_\+visited(cell[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+visited (
+\begin{DoxyParamCaption}
+\item[{{\bf cell}}]{ruzzle\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8h_a605e27e92e36decc89320b12d494e6d8}
+
+
+Réinitialise le statut visité de chaque case. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cell} & ruzzle\mbox{[}N\mbox{]}\mbox{[}N\mbox{]} grille du ruzzle\\
+\hline
+\end{DoxyParams}
+init\+\_\+visit prend la grille du ruzzle en paramètre et réinitialise le booléen qui indique le passage ou non sur une case en le passant à false. 
+
+Définition à la ligne 261 du fichier ruzzle.\+c.
+
+\hypertarget{ruzzle_8h_ad9429c78019005dc6e8e62a30166c64b}{}\index{ruzzle.\+h@{ruzzle.\+h}!print\+\_\+list@{print\+\_\+list}}
+\index{print\+\_\+list@{print\+\_\+list}!ruzzle.\+h@{ruzzle.\+h}}
+\subsubsection[{print\+\_\+list()}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+list (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{ruzzle_8h_ad9429c78019005dc6e8e62a30166c64b}
+
+
+Enregiste la liste des mots possible dans un fichier externe. 
+
+
+
+Définition à la ligne 337 du fichier ruzzle.\+c.
+
+
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{df/d02/ruzzle_8h_ad9429c78019005dc6e8e62a30166c64b_cgraph}
+\end{center}
+\end{figure}
+
+

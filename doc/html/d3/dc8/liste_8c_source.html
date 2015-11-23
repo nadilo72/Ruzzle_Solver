@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Ruzzle Solver:  Fichier source de liste.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ruzzle Solver
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.10 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d3/dc8/liste_8c_source.html','../../');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">liste.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/dc8/liste_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/* Déclaration de la structure des éléments de la liste */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../d9/db2/structelement.html">element</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html#af034065dfe33f7ef74362e100b14b260">   26</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../d9/db2/structelement.html#af034065dfe33f7ef74362e100b14b260">word</a>[20];                              </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">   27</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">score</a>;                                  </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">   28</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d9/db2/structelement.html">element</a> * <a class="code" href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">pred</a>;                      </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">   29</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d9/db2/structelement.html">element</a> * <a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a>;                      </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}<a class="code" href="../../d3/dc8/liste_8c.html#aaa9f09bf55fb32a9090e2dc051b75a6a">t_element</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/* Déclaration des indices de drapeau et d&#39;élément courant */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d3/dc8/liste_8c.html#a0c3bc65023967a457d3f8427649fb965">   33</a></span>&#160;<a class="code" href="../../d9/db2/structelement.html">t_element</a> * <a class="code" href="../../d3/dc8/liste_8c.html#a0c3bc65023967a457d3f8427649fb965">drapeau</a>;                            </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d3/dc8/liste_8c.html#a33528e825c99db5ca765f2d8c9b1340e">   34</a></span>&#160;<a class="code" href="../../d9/db2/structelement.html">t_element</a> * <a class="code" href="../../d3/dc8/liste_8c.html#a33528e825c99db5ca765f2d8c9b1340e">ec</a>;                                 </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d4/d5b/liste_8h.html#a4fe6a1e67a4e3ed6e67a91704873d7c2">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/dc8/liste_8c.html#a4fe6a1e67a4e3ed6e67a91704873d7c2">init_liste</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        drapeau = malloc(<span class="keyword">sizeof</span>(<a class="code" href="../../d9/db2/structelement.html">t_element</a>));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        drapeau -&gt; <a class="code" href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">pred</a> = <a class="code" href="../../d3/dc8/liste_8c.html#a0c3bc65023967a457d3f8427649fb965">drapeau</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        drapeau -&gt; <a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a> = <a class="code" href="../../d3/dc8/liste_8c.html#a0c3bc65023967a457d3f8427649fb965">drapeau</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ec = <a class="code" href="../../d3/dc8/liste_8c.html#a0c3bc65023967a457d3f8427649fb965">drapeau</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d4/d5b/liste_8h.html#a7c1f2e07788b9e73ec80a044c36d5231">   56</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231">liste_vide</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> (drapeau-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a>==drapeau);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d4/d5b/liste_8h.html#ab280062aa7789f70bc0436edd0c674cd">   68</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd">hors_liste</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span>(ec==drapeau);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d4/d5b/liste_8h.html#a68274781c5c541e03951b5e3f408e1d2">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/dc8/liste_8c.html#a68274781c5c541e03951b5e3f408e1d2">en_tete</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="../../d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231">liste_vide</a>())</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                ec = drapeau-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d4/d5b/liste_8h.html#aaacc4277d423e99a9c929cdadb00a65c">   89</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/dc8/liste_8c.html#aaacc4277d423e99a9c929cdadb00a65c">en_queue</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="../../d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231">liste_vide</a>())</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                ec = drapeau-&gt;<a class="code" href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">pred</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d4/d5b/liste_8h.html#a5cd9c9ae9a2d39e81678f35d50540d36">  100</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/dc8/liste_8c.html#a5cd9c9ae9a2d39e81678f35d50540d36">suivant</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="../../d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd">hors_liste</a>())</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                ec = ec-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="../../d3/dc8/liste_8c.html#afa1ade166b772261d348f25527fa3f29">  114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/dc8/liste_8c.html#afa1ade166b772261d348f25527fa3f29">valeur_elt</a>(<span class="keywordtype">char</span> mot[20],<span class="keywordtype">int</span> * <a class="code" href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">score</a>)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="../../d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd">hors_liste</a>())</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        strcpy(mot,ec-&gt;<a class="code" href="../../d9/db2/structelement.html#af034065dfe33f7ef74362e100b14b260">word</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                *score = ec-&gt;<a class="code" href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">score</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="../../d4/d5b/liste_8h.html#a483769044edc043258a1560fdc351e5a">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/dc8/liste_8c.html#ae5922bfd958a4a1bbfee1cb8c2756684">ajout_droit</a>(<span class="keywordtype">char</span> * inWord,<span class="keywordtype">int</span> <a class="code" href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">score</a>)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="../../d9/db2/structelement.html">t_element</a> * <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="../../d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231">liste_vide</a>() || !<a class="code" href="../../d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd">hors_liste</a>())</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keyword">new</span> = malloc(<span class="keyword">sizeof</span>(<a class="code" href="../../d9/db2/structelement.html">t_element</a>));</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                strcpy(new-&gt;word,inWord);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keyword">new</span>-&gt;score = <a class="code" href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">score</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keyword">new</span>-&gt;pred = <a class="code" href="../../d3/dc8/liste_8c.html#a33528e825c99db5ca765f2d8c9b1340e">ec</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keyword">new</span>-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a> = ec-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                ec-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a>-&gt;<a class="code" href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">pred</a>=<span class="keyword">new</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                ec-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a>=<span class="keyword">new</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                ec=<span class="keyword">new</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">/********************************************/</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../d4/d5b/liste_8h.html#ad2e1a24934fb93e4fcb8e58f351b5ffb">  153</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/dc8/liste_8c.html#a87ff26aaf018f7d1cc2a926aea1d488a">ajout_gauche</a>(<span class="keywordtype">char</span> * inWord,<span class="keywordtype">int</span> <a class="code" href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">score</a>)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="../../d9/db2/structelement.html">t_element</a> * <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="../../d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231">liste_vide</a>() || !<a class="code" href="../../d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd">hors_liste</a>())</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="keyword">new</span> = malloc(<span class="keyword">sizeof</span>(<a class="code" href="../../d9/db2/structelement.html">t_element</a>));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                strcpy(new-&gt;word,inWord);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="keyword">new</span>-&gt;score = <a class="code" href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">score</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keyword">new</span>-&gt;pred = ec-&gt;<a class="code" href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">pred</a>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keyword">new</span>-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a> = <a class="code" href="../../d3/dc8/liste_8c.html#a33528e825c99db5ca765f2d8c9b1340e">ec</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                ec-&gt;<a class="code" href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">pred</a>-&gt;<a class="code" href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">succ</a>=<span class="keyword">new</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                ec-&gt;<a class="code" href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">pred</a>=<span class="keyword">new</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                ec=<span class="keyword">new</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="ttc" id="liste_8c_html_ab280062aa7789f70bc0436edd0c674cd"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd">hors_liste</a></div><div class="ttdeci">bool hors_liste(void)</div><div class="ttdoc">Verifie si on se trouve encore dans la liste. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00068">liste.c:68</a></div></div>
+<div class="ttc" id="liste_8c_html_a87ff26aaf018f7d1cc2a926aea1d488a"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#a87ff26aaf018f7d1cc2a926aea1d488a">ajout_gauche</a></div><div class="ttdeci">void ajout_gauche(char *inWord, int score)</div><div class="ttdoc">Ajoute un nouvel élément a gauche de l&#39;elt courant. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00153">liste.c:153</a></div></div>
+<div class="ttc" id="liste_8c_html_a68274781c5c541e03951b5e3f408e1d2"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#a68274781c5c541e03951b5e3f408e1d2">en_tete</a></div><div class="ttdeci">void en_tete(void)</div><div class="ttdoc">Positionne en tete de la liste. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00078">liste.c:78</a></div></div>
+<div class="ttc" id="liste_8c_html_a4fe6a1e67a4e3ed6e67a91704873d7c2"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#a4fe6a1e67a4e3ed6e67a91704873d7c2">init_liste</a></div><div class="ttdeci">void init_liste(void)</div><div class="ttdoc">Initialise la liste à vide. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00041">liste.c:41</a></div></div>
+<div class="ttc" id="liste_8c_html_a0c3bc65023967a457d3f8427649fb965"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#a0c3bc65023967a457d3f8427649fb965">drapeau</a></div><div class="ttdeci">t_element * drapeau</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00033">liste.c:33</a></div></div>
+<div class="ttc" id="liste_8c_html_a33528e825c99db5ca765f2d8c9b1340e"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#a33528e825c99db5ca765f2d8c9b1340e">ec</a></div><div class="ttdeci">t_element * ec</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00034">liste.c:34</a></div></div>
+<div class="ttc" id="liste_8c_html_afa1ade166b772261d348f25527fa3f29"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#afa1ade166b772261d348f25527fa3f29">valeur_elt</a></div><div class="ttdeci">void valeur_elt(char mot[20], int *score)</div><div class="ttdoc">Renvoi les valeurs comprises dans l&#39;element courant. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00114">liste.c:114</a></div></div>
+<div class="ttc" id="structelement_html_aef160b7437d94056f1dc59646cd5b87d"><div class="ttname"><a href="../../d9/db2/structelement.html#aef160b7437d94056f1dc59646cd5b87d">element::score</a></div><div class="ttdeci">int score</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00027">liste.c:27</a></div></div>
+<div class="ttc" id="liste_8c_html_aaacc4277d423e99a9c929cdadb00a65c"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#aaacc4277d423e99a9c929cdadb00a65c">en_queue</a></div><div class="ttdeci">void en_queue(void)</div><div class="ttdoc">Positionne en queue de la liste. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00089">liste.c:89</a></div></div>
+<div class="ttc" id="structelement_html"><div class="ttname"><a href="../../d9/db2/structelement.html">element</a></div><div class="ttdoc">Structure de donnée formant un élément de la liste. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00024">liste.c:24</a></div></div>
+<div class="ttc" id="structelement_html_a28a298bdc8522e913d39bf3f672ff5e5"><div class="ttname"><a href="../../d9/db2/structelement.html#a28a298bdc8522e913d39bf3f672ff5e5">element::succ</a></div><div class="ttdeci">struct element * succ</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00029">liste.c:29</a></div></div>
+<div class="ttc" id="liste_8c_html_ae5922bfd958a4a1bbfee1cb8c2756684"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#ae5922bfd958a4a1bbfee1cb8c2756684">ajout_droit</a></div><div class="ttdeci">void ajout_droit(char *inWord, int score)</div><div class="ttdoc">Ajoute un nouvel élément a droite de l&#39;elt courant. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00129">liste.c:129</a></div></div>
+<div class="ttc" id="liste_8c_html_a5cd9c9ae9a2d39e81678f35d50540d36"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#a5cd9c9ae9a2d39e81678f35d50540d36">suivant</a></div><div class="ttdeci">void suivant(void)</div><div class="ttdoc">Positionne sur l&#39;element suivant. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00100">liste.c:100</a></div></div>
+<div class="ttc" id="structelement_html_af034065dfe33f7ef74362e100b14b260"><div class="ttname"><a href="../../d9/db2/structelement.html#af034065dfe33f7ef74362e100b14b260">element::word</a></div><div class="ttdeci">char word[20]</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00026">liste.c:26</a></div></div>
+<div class="ttc" id="liste_8c_html_aaa9f09bf55fb32a9090e2dc051b75a6a"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#aaa9f09bf55fb32a9090e2dc051b75a6a">t_element</a></div><div class="ttdeci">struct element t_element</div><div class="ttdoc">Structure de donnée formant un élément de la liste. </div></div>
+<div class="ttc" id="liste_8c_html_a7c1f2e07788b9e73ec80a044c36d5231"><div class="ttname"><a href="../../d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231">liste_vide</a></div><div class="ttdeci">bool liste_vide(void)</div><div class="ttdoc">Fonction permettant de savoir si la liste contient au moins un element. </div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00056">liste.c:56</a></div></div>
+<div class="ttc" id="structelement_html_a932b74e6abe994b7316f4347a70d215b"><div class="ttname"><a href="../../d9/db2/structelement.html#a932b74e6abe994b7316f4347a70d215b">element::pred</a></div><div class="ttdeci">struct element * pred</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dc8/liste_8c_source.html#l00028">liste.c:28</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d3/dc8/liste_8c.html">liste.c</a></li>
+    <li class="footer">Généré le Lundi 23 Novembre 2015 21:43:01 pour Ruzzle Solver par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
+  </ul>
+</div>
+</body>
+</html>

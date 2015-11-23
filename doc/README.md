@@ -1,14 +1,17 @@
-Ruzzle Solver
+ÔªøRuzzle Solver
 =============
 
-Ce programme ‡ ÈtÈ conÁue dans le cadre d'un projet de seconde annÈe de License SPI ‡ l'UniversitÈ du Maine - Le Mans
+Ce programme √† √©t√© con√ßue dans le cadre d'un projet de seconde ann√©e de License SPI √† l'Universit√© du Maine - Le Mans
 
-Ce programme ‡ pour but de rÈsoudre une grille du jeux pour smartphone Ruzzle : 
+Ce programme √† pour but de r√©soudre une grille du jeux pour smartphone Ruzzle : 
 
-![image ruzzle](ruzzle.jpg "Une grille de ruzzle")
+![Une grille de ruzzle](./ruzzle.jpg)
 
-Il est possible d'utilisÈ ce programme soit : 
-	* En CLI en passant dirrectement la chaine de caractËre qui dÈfini la grille
-	* En entrent la chaine de caractËre lorsqu'elle est demandÈe.
+Il est possible d'utilis√© ce programme soit : 
+	* En CLI en passant dirrectement la chaine de caract√®re qui d√©fini la grille
+	
+		> ruzzle_solver "V5  R1  L2  S1  T1  N1  I1  V5  C3MTL2  A1  R1  D2  E1  S1  E1  "
+		
+	* En entrent la chaine de caract√®re lorsqu'elle est demand√©e.
 
 Auteurs : Ewen C. - Bastien 

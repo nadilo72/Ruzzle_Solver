@@ -1,0 +1,10 @@
+<map id="add_word" name="add_word">
+<area shape="rect" id="node2" href="$d3/dc8/liste_8c.html#a7c1f2e07788b9e73ec80a044c36d5231" title="Fonction permettant de savoir si la liste contient au moins un element. " alt="" coords="279,83,354,109"/>
+<area shape="rect" id="node3" href="$d3/dc8/liste_8c.html#a68274781c5c541e03951b5e3f408e1d2" title="Positionne en tete de la liste. " alt="" coords="147,32,213,59"/>
+<area shape="rect" id="node4" href="$d3/dc8/liste_8c.html#ab280062aa7789f70bc0436edd0c674cd" title="Verifie si on se trouve encore dans la liste. " alt="" coords="277,235,356,261"/>
+<area shape="rect" id="node5" href="$d3/dc8/liste_8c.html#afa1ade166b772261d348f25527fa3f29" title="Renvoi les valeurs comprises dans l&#39;element courant. " alt="" coords="142,285,218,312"/>
+<area shape="rect" id="node6" href="$d3/dc8/liste_8c.html#a87ff26aaf018f7d1cc2a926aea1d488a" title="Ajoute un nouvel élément a gauche de l&#39;elt courant. " alt="" coords="131,133,229,160"/>
+<area shape="rect" id="node7" href="$d3/dc8/liste_8c.html#a5cd9c9ae9a2d39e81678f35d50540d36" title="Positionne sur l&#39;element suivant. " alt="" coords="149,336,211,363"/>
+<area shape="rect" id="node8" href="$d3/dc8/liste_8c.html#aaacc4277d423e99a9c929cdadb00a65c" title="Positionne en queue de la liste. " alt="" coords="141,83,219,109"/>
+<area shape="rect" id="node9" href="$d3/dc8/liste_8c.html#ae5922bfd958a4a1bbfee1cb8c2756684" title="Ajoute un nouvel élément a droite de l&#39;elt courant. " alt="" coords="139,184,221,211"/>
+</map>
