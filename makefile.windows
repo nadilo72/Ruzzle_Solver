@@ -27,7 +27,7 @@ LIB_DEBUG = $(LIB)
 LDFLAGS_DEBUG = $(LDFLAGS)
 OBJDIR_DEBUG = obj\\Debug
 DEP_DEBUG = 
-OUT_DEBUG = bin\\Debug\\Ruzzle_Solver.exe
+OUT_DEBUG = bin\\Debug\\test.exe
 
 INC_RELEASE = $(INC)
 CFLAGS_RELEASE = $(CFLAGS) -O2
@@ -38,11 +38,11 @@ LIB_RELEASE = $(LIB)
 LDFLAGS_RELEASE = $(LDFLAGS) -s
 OBJDIR_RELEASE = obj\\Release
 DEP_RELEASE = 
-OUT_RELEASE = bin\\Release\\Ruzzle_Solver.exe
+OUT_RELEASE = bin\\Release\\test.exe
 
-OBJ_DEBUG = $(OBJDIR_DEBUG)\\liste.o $(OBJDIR_DEBUG)\\main.o $(OBJDIR_DEBUG)\\ruzzle.o
+OBJ_DEBUG = $(OBJDIR_DEBUG)\\src\\liste.o $(OBJDIR_DEBUG)\\src\\main.o $(OBJDIR_DEBUG)\\src\\ruzzle.o
 
-OBJ_RELEASE = $(OBJDIR_RELEASE)\\liste.o $(OBJDIR_RELEASE)\\main.o $(OBJDIR_RELEASE)\\ruzzle.o
+OBJ_RELEASE = $(OBJDIR_RELEASE)\\src\\liste.o $(OBJDIR_RELEASE)\\src\\main.o $(OBJDIR_RELEASE)\\src\\ruzzle.o
 
 all: debug release
 
@@ -50,7 +50,7 @@ clean: clean_debug clean_release
 
 before_debug: 
 	cmd /c if not exist bin\\Debug md bin\\Debug
-	cmd /c if not exist $(OBJDIR_DEBUG) md $(OBJDIR_DEBUG)
+	cmd /c if not exist $(OBJDIR_DEBUG)\\src md $(OBJDIR_DEBUG)\\src
 
 after_debug: 
 
@@ -59,23 +59,23 @@ debug: before_debug out_debug after_debug
 out_debug: before_debug $(OBJ_DEBUG) $(DEP_DEBUG)
 	$(LD) $(LIBDIR_DEBUG) -o $(OUT_DEBUG) $(OBJ_DEBUG)  $(LDFLAGS_DEBUG) $(LIB_DEBUG)
 
-$(OBJDIR_DEBUG)\\liste.o: liste.c
-	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c liste.c -o $(OBJDIR_DEBUG)\\liste.o
+$(OBJDIR_DEBUG)\\src\\liste.o: src\\liste.c
+	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src\\liste.c -o $(OBJDIR_DEBUG)\\src\\liste.o
 
-$(OBJDIR_DEBUG)\\main.o: main.c
-	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c main.c -o $(OBJDIR_DEBUG)\\main.o
+$(OBJDIR_DEBUG)\\src\\main.o: src\\main.c
+	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src\\main.c -o $(OBJDIR_DEBUG)\\src\\main.o
 
-$(OBJDIR_DEBUG)\\ruzzle.o: ruzzle.c
-	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c ruzzle.c -o $(OBJDIR_DEBUG)\\ruzzle.o
+$(OBJDIR_DEBUG)\\src\\ruzzle.o: src\\ruzzle.c
+	$(CC) $(CFLAGS_DEBUG) $(INC_DEBUG) -c src\\ruzzle.c -o $(OBJDIR_DEBUG)\\src\\ruzzle.o
 
 clean_debug: 
 	cmd /c del /f $(OBJ_DEBUG) $(OUT_DEBUG)
 	cmd /c rd bin\\Debug
-	cmd /c rd $(OBJDIR_DEBUG)
+	cmd /c rd $(OBJDIR_DEBUG)\\src
 
 before_release: 
 	cmd /c if not exist bin\\Release md bin\\Release
-	cmd /c if not exist $(OBJDIR_RELEASE) md $(OBJDIR_RELEASE)
+	cmd /c if not exist $(OBJDIR_RELEASE)\\src md $(OBJDIR_RELEASE)\\src
 
 after_release: 
 
@@ -84,19 +84,19 @@ release: before_release out_release after_release
 out_release: before_release $(OBJ_RELEASE) $(DEP_RELEASE)
 	$(LD) $(LIBDIR_RELEASE) -o $(OUT_RELEASE) $(OBJ_RELEASE)  $(LDFLAGS_RELEASE) $(LIB_RELEASE)
 
-$(OBJDIR_RELEASE)\\liste.o: liste.c
-	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c liste.c -o $(OBJDIR_RELEASE)\\liste.o
+$(OBJDIR_RELEASE)\\src\\liste.o: src\\liste.c
+	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src\\liste.c -o $(OBJDIR_RELEASE)\\src\\liste.o
 
-$(OBJDIR_RELEASE)\\main.o: main.c
-	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c main.c -o $(OBJDIR_RELEASE)\\main.o
+$(OBJDIR_RELEASE)\\src\\main.o: src\\main.c
+	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src\\main.c -o $(OBJDIR_RELEASE)\\src\\main.o
 
-$(OBJDIR_RELEASE)\\ruzzle.o: ruzzle.c
-	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c ruzzle.c -o $(OBJDIR_RELEASE)\\ruzzle.o
+$(OBJDIR_RELEASE)\\src\\ruzzle.o: src\\ruzzle.c
+	$(CC) $(CFLAGS_RELEASE) $(INC_RELEASE) -c src\\ruzzle.c -o $(OBJDIR_RELEASE)\\src\\ruzzle.o
 
 clean_release: 
 	cmd /c del /f $(OBJ_RELEASE) $(OUT_RELEASE)
 	cmd /c rd bin\\Release
-	cmd /c rd $(OBJDIR_RELEASE)
+	cmd /c rd $(OBJDIR_RELEASE)\\src
 
 .PHONY: before_debug after_debug clean_debug before_release after_release clean_release
 
